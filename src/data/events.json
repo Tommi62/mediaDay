@@ -21,8 +21,8 @@
             "name": "Opiskelupäivä",
             "startTime": "15:00",
             "startDate": "21.9.2021",
-            "streamUrl": "//vjs.zencdn.net/v/oceans.mp4",
-            "streamVideoType": "video/mp4"
+            "streamUrl": "rtmp://195.148.104.124:1935/jakelu/1/playlist.m3u8",
+            "streamVideoType": "application/x-mpegurl"
         }
     ]
 }

@@ -1,20 +1,27 @@
 import React from 'react';
-import { Col, Row} from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 
 
-const TextBlock= ({ header, subHeader, paragraph }) => {
-    return (
-        <Row className="block">
-            <Col>
+const TextBlock = ({header, paragraph}) => {
+    console.log('block: ' + header + ' + ' + paragraph);
+    if (paragraph == null) {
+        return (
+            <Col className="block card-1">
                 <Row>
                     <Col className="blockHeader">{header}</Col>
                 </Row>
-                <Row>
-                    <Col className="blockParagraph">{paragraph}</Col>
-                </Row>
             </Col>
-        </Row>
         )
+    } else return (
+        <Col className="block card-1">
+            <Row>
+                <Col className="blockHeader">{header}</Col>
+            </Row>
+            <Row>
+                <Col className="blockParagraph">{paragraph}</Col>
+            </Row>
+        </Col>
+    )
 }
 
 export default TextBlock;

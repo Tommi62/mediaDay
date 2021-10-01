@@ -7,7 +7,7 @@ import texts from '../data/texts.json';
 const Home = () => {
     return (
         <div>
-            <Container>
+            
                 <Row>
                     <Col>
                         <Image src="..\media\speakers\mikko_kodisoja.jpg" fluid/>
@@ -27,7 +27,7 @@ const Home = () => {
                     })}
                 </Row>
                 <TextBlock header={texts.homepage.header3} paragraph={texts.homepage.paragraph3}/>
-            </Container>
+            
         </div>
     )
 }

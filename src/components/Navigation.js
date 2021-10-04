@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
-import { Nav, Navbar } from 'react-bootstrap';
+import {Link} from "react-router-dom";
+import {Nav, Navbar} from 'react-bootstrap';
 import logo from '../logo.svg';
 
 
 const Navigation = () => {
     return (
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="dark" fixed="top" variant="dark">
             <Navbar.Brand as={Link} to="/">
                 <img
                     src={logo}

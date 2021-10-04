@@ -1,0 +1,50 @@
+{
+  "speakers": [
+    {
+      "name": "Frans Tihveräinen",
+      "company": "FLYAR",
+      "description": "Erilainen urapolku - Frans Tihveräinen: Suoraan koulun penkiltä pitkän linjan AR-ammattilaiseksi. Frans kertoo omasta nousustaan AR-ammattilaiseksi, ja esittelee omat vinkkinsä yrittäjyydestä haaveileville opiskelijoille. Puheenvuoro esitetään suomeksi.",
+      "imageUrl": "../media/speakers/frans_tihverainen.jpg"
+    },
+    {
+      "name": "Mikko Kodisoja",
+      "company": "FIREFRAME",
+      "description": "Yrityksen perustaja Mikko Kodisoja kertoo, miksi vaihtoi peliteollisuuden elokuvamaailmaan. Kuumana puheenaiheena Suomen ensimmäinen Hollywood-tason ledseinä-studio. Puheenvuoro esitetään englanniksi.",
+      "imageUrl": "../media/speakers/mikko_kodisoja.jpg"
+    },
+    {
+      "name": "Sami Marttinen",
+      "company": "SWAPPIE",
+      "description": "Sami Marttinen esittelee Swappien tarinan, ja teknologian merkityksen yrityksen nousun taustalla. Puheenvuoro esitetään suomeksi.",
+      "imageUrl": "../media/speakers/sami_marttinen.jpg"
+    },
+    {
+      "name": "Ulrich Mors",
+      "company": "Sony Independent Expert",
+      "description": "Ulrich Mors esittelee Sonyn uusimmat videokamerauutuudet ammattimaisten videotuotantojen käyttöön. Näkökulmana kameroiden käyttö eurooppalaisessa indie-elokuvatuotannossa, josta Ulrichilla on itsessään paljon kokemusta. Puheenvuoro esitetään englanniksi.",
+      "imageUrl": "../media/speakers/ulrich_mors.jpg"
+    }
+  ],
+
+  "footer": [
+    {
+      "header": "Yhteystiedot:",
+      "subHeader": "Ota yhteyttä",
+      "body": "Haluatko ottaa osaa tapahtumaan tai sinulla on muuta kysyttävää? Yhteydenotot ja tiedustelut puhelimitse tuottaja Päivi Pitkäseen 040 123 4567 tai sähköpostilla mediaday2021@metropolia.fi."
+    },
+    {
+      "header": "Järjestäjät",
+      "body": "Mediadayn järjestää Metropolia Ammattikorkeakoulu yhteistyökumppaneiden kanssa."
+    }
+  ],
+
+  "homepage": {
+    "intro": "Metropolia ammattikorkeakoulu järjestää Mediaday-tapahtuman pitkän tauon jälkeen keväällä 2022.",
+    "header1": "Puhujia eri teollisuudenaloilta",
+    "paragraph1": "Huipputason ammattilaisten puheenvuoroja, mukana monta rautaista puhujaa monelta mediakentän osa-alueelta.",
+    "header2": "Mediaday yhdistää",
+    "paragraph2": "Mediaday tuo opiskelijat ja yritysmaailman yhteen. Näet uusimmat jutut ja tutustu ammattilaisten maailmaan.",
+    "header3": "Rento ilmapiiri",
+    "paragraph3": "Hyväntuulinen tekemisen meininki. Meillä voi vapaasti kysellä ja ihmetellä, pääkohderyhmänä ovat opiskelijat."
+  }
+}

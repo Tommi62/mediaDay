@@ -35,6 +35,9 @@ const Navigation = () => {
                 <Nav.Item>
                     <Nav.Link as={Link} to="/event/mediaday-567">Mediaday event 567</Nav.Link>
                 </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link as={Link} to="/videos">Videot</Nav.Link>
+                </Nav.Item>
             </Nav>
         </Navbar>
     )

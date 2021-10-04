@@ -1,11 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
 
-const Video = ({ url, type }) => {
+const Video = ({ url, type, mediaType, setIde }) => {
     const videoRef = useRef(null);
     const playerRef = useRef(null);
+    const [videoDuration, setVideoDuration] = useState(0);
+    const [triggered, setTriggered] = useState(false);
+    const [update, setUpdate] = useState(Date.now());
 
     const options = {
         // lookup the options in the docs for more options
@@ -32,6 +35,12 @@ const Video = ({ url, type }) => {
         player.on("dispose", () => {
             console.log("player will dispose");
         });
+
+        player.on("loadedmetadata", () => {
+            console.log("Metadata loaded", player.duration());
+            setVideoDuration(player.duration());
+        });
+
     };
 
     useEffect(() => {
@@ -52,6 +61,33 @@ const Video = ({ url, type }) => {
         }
     }, [options]);
 
+
+    useEffect(() => {
+        try {
+            const timeout = setTimeout(() => {
+                if (mediaType === 'stream') {
+                    setTriggered(true);
+                    setUpdate(Date.now());
+                }
+            }, 900);
+        } catch (e) {
+            console.log(e.message);
+        }
+    }, [mediaType]);
+
+    useEffect(() => {
+        try {
+            if (triggered) {
+                if (videoDuration !== Infinity) {
+                    setIde(1);
+                    console.log('Not live');
+                }
+            }
+        } catch (e) {
+            console.log(e.message);
+        }
+    }, [triggered, update]);
+
     // Dispose the Video.js player when the functional component unmounts
     useEffect(() => {
         return () => {
@@ -63,9 +99,11 @@ const Video = ({ url, type }) => {
     }, []);
 
     return (
-        <div data-vjs-player>
-            <video ref={videoRef} className="video-js vjs-big-play-centered" />
-        </div>
+        <>
+            <div data-vjs-player>
+                <video ref={videoRef} className="video-js vjs-big-play-centered" />
+            </div>
+        </>
     );
 };
 

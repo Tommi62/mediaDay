@@ -1,0 +1,41 @@
+
+.videoItem {
+    margin: 0;
+    border: none; 
+    padding: 0 1rem;
+}
+
+.videoCard:hover {
+    background-color: #f0f0f0;
+}
+
+.videoCard {
+    border: none;
+    cursor: pointer;
+    margin: 0 0.3rem 0.3rem 0.3rem;
+}
+
+.card-body {
+    padding: 0.3rem;
+}
+
+.videoList {
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.description {
+    text-align: start;
+}
+
+.videoTitle {
+    margin: 0.3rem 0;
+}
+
+.videoCardTitle {
+    max-width: 10vw;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

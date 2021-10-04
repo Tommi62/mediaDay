@@ -8,6 +8,7 @@ import PromoVideo from './pages/PromoVideo';
 import EventPage from './pages/EventPage';
 import SchedulePage from './pages/SchedulePage';
 import Home from './pages/Home';
+import VideoPage from './pages/VideoPage';
 
 const App = () => {
   return (
@@ -20,6 +21,9 @@ const App = () => {
       <Switch>
         <Route path="/about">
           <About name="Juha" />
+        </Route>
+        <Route path="/videos">
+          <VideoPage />
         </Route>
         <Route path="/schedule">
           <SchedulePage />

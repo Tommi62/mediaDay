@@ -27,16 +27,14 @@ const Speaker = ({speaker}) => {
 
   return (
     <Row className=" justify-content-md-center">
-      <Row className="speakerRow card3">
+      <Row className="speakerRow card4">
         <Col md={3} className="alignCenter">
           <Image className="speakerImage card2" src={speaker.imageUrl} fluid roundedCircle />
         </Col>
         <Col md={9} >
-          {speaker.name}
-          <br /> <br />
-          {speaker.company}
-          <br /> <br />
-          {speaker.description}
+          <h3 className='speakerName'>{speaker.name}</h3>
+          <h4 className='speakerCompany'>{speaker.company}</h4>
+          <p className='speakerText'>{speaker.description}</p>
         </Col>
       </Row>
     </Row>

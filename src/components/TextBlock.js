@@ -1,26 +1,37 @@
 import React from 'react';
-import {Col, Row} from 'react-bootstrap';
+import {Carousel} from 'react-bootstrap';
 
 
 const TextBlock = ({header, paragraph}) => {
-    console.log('block: ' + header + ' + ' + paragraph);
     if (paragraph == null) {
         return (
-            <Col className="block card-1">
-                <Row>
-                    <Col className="blockHeader">{header}</Col>
-                </Row>
-            </Col>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src="http://placekitten.com/800/800?text=Third slide&bg=20232a"
+                    alt="Third slide"
+                />
+
+                <Carousel.Caption>
+                    <h3>{header}</h3>
+                </Carousel.Caption>
+            </Carousel.Item>
         )
     } else return (
-        <Col className="block card-1">
-            <Row>
-                <Col className="blockHeader">{header}</Col>
-            </Row>
-            <Row>
-                <Col className="blockParagraph">{paragraph}</Col>
-            </Row>
-        </Col>
+        <Carousel.Item>
+            <img
+                className="d-block w-100"
+                src="holder.js/800x400?text=Third slide&bg=20232a"
+                alt="Third slide"
+            />
+
+            <Carousel.Caption>
+                <h3>{header}</h3>
+                <p>
+                    {paragraph}
+                </p>
+            </Carousel.Caption>
+        </Carousel.Item>
     )
 }
 

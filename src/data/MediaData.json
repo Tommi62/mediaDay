@@ -1,51 +1,54 @@
 {
-    "media": [
-        {
-            "id": 0,
-            "type": "stream",
-            "name": "Striimi",
-            "description": "Tähän tulis sit sen striimin kuvaus.",
-            "startTime": "15:00",
-            "startDate": "21.9.2021",
-            "url": "http://195.148.104.124:1935/jakelu/tommi/playlist.m3u8",
-            "streamVideoType": "application/x-mpegurl",
-            "thumbnail": "http://placekitten.com/175/98"
-        },
-        {
-            "id": 1,
-            "type": "video",
-            "name": "Tosi pitkä videon otsikko, meneekö layout rikki?",
-            "description": "Listassa ekana oleva video.",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Wikipedia_Edit_2014.webm",
-            "streamVideoType": "video/mp4",
-            "thumbnail": "http://placekitten.com/175/98"
-        },
-        {
-            "id": 2,
-            "type": "video",
-            "name": "Video 2",
-            "description": "Listassa tokana oleva video.",
-            "url": "//vjs.zencdn.net/v/oceans.mp4",
-            "streamVideoType": "video/mp4",
-            "thumbnail": "http://placekitten.com/175/98"
-        },
-        {
-            "id": 3,
-            "type": "video",
-            "name": "Video 3",
-            "description": "Listassa kolmantena oleva video.",
-            "url": "https://youtu.be/QHvON63FVDg",
-            "streamVideoType": "video/mp4",
-            "thumbnail": "http://placekitten.com/175/98"
-        },
-        {
-            "id": 4,
-            "type": "video",
-            "name": "Video 4",
-            "description": "Listassa neljäntenä oleva video. Nyt täytyy testata miten tää reagoi tällaseen pitempään descriptioniin, en tiedä mikä olis tarpeeks pitkä ja pitäsikö tähän tehdä rivin vaihto, mutta eiköhän tää ala riittää.",
-            "url": "https://youtu.be/QHvON63FVDg",
-            "streamVideoType": "video/mp4",
-            "thumbnail": "http://placekitten.com/175/98"
-        }
-    ]
+  "media": [
+    {
+      "id": 0,
+      "type": "stream",
+      "name": "Striimi",
+      "description": "Tähän tulis sit sen striimin kuvaus.",
+      "startTime": "2021-10-11 00:00:00",
+      "url": "http://195.148.104.124:1935/jakelu/tommi/playlist.m3u8",
+      "streamVideoType": "application/x-mpegurl",
+      "thumbnail": "http://placekitten.com/175/98"
+    },
+    {
+      "id": 1,
+      "type": "video",
+      "name": "Tosi pitkä videon otsikko, meneekö layout rikki?",
+      "description": "Listassa ekana oleva video.",
+      "startTime": "2021-10-21 02:20:58",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Wikipedia_Edit_2014.webm",
+      "streamVideoType": "video/mp4",
+      "thumbnail": "http://placekitten.com/175/98"
+    },
+    {
+      "id": 2,
+      "type": "video",
+      "name": "Video 2",
+      "description": "Listassa tokana oleva video.",
+      "startTime": "2021-11-15 02:20:58",
+      "url": "//vjs.zencdn.net/v/oceans.mp4",
+      "streamVideoType": "video/mp4",
+      "thumbnail": "http://placekitten.com/175/98"
+    },
+    {
+      "id": 3,
+      "type": "video",
+      "name": "Video 3",
+      "description": "Listassa kolmantena oleva video.",
+      "startTime": "2021-10-04 15:00:00",
+      "url": "https://youtu.be/QHvON63FVDg",
+      "streamVideoType": "video/mp4",
+      "thumbnail": "http://placekitten.com/175/98"
+    },
+    {
+      "id": 4,
+      "type": "video",
+      "name": "Video 4",
+      "description": "Listassa neljäntenä oleva video. Nyt täytyy testata miten tää reagoi tällaseen pitempään descriptioniin, en tiedä mikä olis tarpeeks pitkä ja pitäsikö tähän tehdä rivin vaihto, mutta eiköhän tää ala riittää.",
+      "startTime": "2021-10-11 02:20:58",
+      "url": "https://youtu.be/QHvON63FVDg",
+      "streamVideoType": "video/mp4",
+      "thumbnail": "http://placekitten.com/175/98"
+    }
+  ]
 }

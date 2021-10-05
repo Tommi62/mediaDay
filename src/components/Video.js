@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
 
-const Video = ({ url, type, mediaType, setIde }) => {
+const Video = ({url, type, mediaType, setIde}) => {
     const videoRef = useRef(null);
     const playerRef = useRef(null);
     const [videoDuration, setVideoDuration] = useState(0);
@@ -69,7 +69,7 @@ const Video = ({ url, type, mediaType, setIde }) => {
                     setTriggered(true);
                     setUpdate(Date.now());
                 }
-            }, 900);
+            }, 9000);
         } catch (e) {
             console.log(e.message);
         }

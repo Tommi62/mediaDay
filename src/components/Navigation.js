@@ -27,15 +27,6 @@ const Navigation = () => {
                     <Nav.Link as={Link} to="/schedule">Schedule</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link as={Link} to="/promovideo">Tapahtuman promo</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link as={Link} to="/event/mediaday-123">Mediaday event linkki</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link as={Link} to="/event/mediaday-567">Mediaday event 567</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
                     <Nav.Link as={Link} to="/videos">Videot</Nav.Link>
                 </Nav.Item>
             </Nav>

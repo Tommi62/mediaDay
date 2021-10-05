@@ -12,6 +12,8 @@ const VideoPage = () => {
     const [videoArray, setVideoArray] = useState([]);
     const [videoStream, setVideoStream] = useState({});
     const [mediaType, setMediaType] = useState('');
+    const [show, setShow] = useState(false);
+    const [isStreamLive, setIsStreamLive] = useState(false);
 
     useEffect(() => {
         try {
@@ -36,14 +38,16 @@ const VideoPage = () => {
         try {
             let videoArr = [];
             for (let i = 0; i < mediaData.media.length; i++) {
-                videoArr.push(mediaData.media[i]);
+                if (mediaData.media[i].type !== 'stream' || isStreamLive) {
+                    videoArr.push(mediaData.media[i]);
+                }
             }
             setVideoArray(videoArr);
             console.log('videoarr', videoArr);
         } catch (e) {
             console.log(e.message);
         }
-    }, []);
+    }, [isStreamLive]);
 
     return (
         <div>
@@ -55,23 +59,43 @@ const VideoPage = () => {
                 </Row>
                 {videoStream !== {} &&
                     <Row>
-                        <Col lg={9} style={{ marginLeft: '15px' }}>
-                            <Row>
-                                {mediaType !== '' &&
-                                    <Video url={videoStream.url} type={videoStream.streamVideoType} mediaType={mediaType} setIde={setIde} />
-                                }
-                            </Row>
-                            <Row>
-                                <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
-                                    <h4 className="videoTitle">{videoStream.name}</h4>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <div className="d-flex justify-content-start description" style={{ padding: 0 }}>
-                                    {videoStream.description}
-                                </div>
-                            </Row>
-                        </Col>
+                        {show ? (
+                            <Col lg={9} style={{ marginLeft: '15px' }}>
+                                <Row>
+                                    {mediaType !== '' &&
+                                        <Video url={videoStream.url} type={videoStream.streamVideoType} mediaType={mediaType} setIde={setIde} setShow={setShow} setIsStreamLive={setIsStreamLive} />
+                                    }
+                                </Row>
+                                <Row>
+                                    <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
+                                        <h4 className="videoTitle">{videoStream.name}</h4>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <div className="d-flex justify-content-start description" style={{ padding: 0 }}>
+                                        {videoStream.description}
+                                    </div>
+                                </Row>
+                            </Col>
+                        ) : (
+                            <Col lg={9} style={{ marginLeft: '15px' }}>
+                                <Row style={{ display: 'none' }}>
+                                    {mediaType !== '' &&
+                                        <Video url={videoStream.url} type={videoStream.streamVideoType} mediaType={mediaType} setIde={setIde} setShow={setShow} setIsStreamLive={setIsStreamLive} />
+                                    }
+                                </Row>
+                                <Row style={{ display: 'none' }}>
+                                    <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
+                                        <h4 className="videoTitle">{videoStream.name}</h4>
+                                    </Col>
+                                </Row>
+                                <Row style={{ display: 'none' }}>
+                                    <div className="d-flex justify-content-start description" style={{ padding: 0 }}>
+                                        {videoStream.description}
+                                    </div>
+                                </Row>
+                            </Col>
+                        )}
                         <Col>
                             <ListGroup className="videoList">
                                 {videoArray.map((item) => (

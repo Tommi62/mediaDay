@@ -3,12 +3,12 @@ import React, { useEffect, useRef, useState } from "react";
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
 
-const Video = ({ url, type, mediaType, setIde }) => {
+const Video = ({ url, type, mediaType, setIde, setShow, setIsStreamLive }) => {
     const videoRef = useRef(null);
     const playerRef = useRef(null);
-    const [videoDuration, setVideoDuration] = useState(0);
+    const [videoTimeout, setVideoTimeout] = useState();
     const [triggered, setTriggered] = useState(false);
-    const [update, setUpdate] = useState(Date.now());
+    const [videoPlayer, setVideoPlayer] = useState();
 
     const options = {
         // lookup the options in the docs for more options
@@ -38,7 +38,7 @@ const Video = ({ url, type, mediaType, setIde }) => {
 
         player.on("loadedmetadata", () => {
             console.log("Metadata loaded", player.duration());
-            setVideoDuration(player.duration());
+            setTriggered(true);
         });
 
     };
@@ -52,6 +52,7 @@ const Video = ({ url, type, mediaType, setIde }) => {
             const player = (playerRef.current = videojs(videoElement, options, () => {
                 console.log("player is ready");
                 onReady && onReady(player);
+                setVideoPlayer(player);
             }));
         } else {
             // you can update player here [update player through props]
@@ -65,28 +66,35 @@ const Video = ({ url, type, mediaType, setIde }) => {
     useEffect(() => {
         try {
             const timeout = setTimeout(() => {
+                console.log('VIDEOTIMEOUT');
                 if (mediaType === 'stream') {
                     setTriggered(true);
-                    setUpdate(Date.now());
                 }
-            }, 900);
+            }, 1500);
+            setVideoTimeout(timeout);
+            return () => clearTimeout(timeout);
         } catch (e) {
             console.log(e.message);
         }
-    }, [mediaType]);
+    }, []);
 
     useEffect(() => {
         try {
             if (triggered) {
-                if (videoDuration !== Infinity) {
+                console.log('playeri', videoPlayer.duration());
+                clearTimeout(videoTimeout);
+                if (videoPlayer.duration() !== Infinity && mediaType === 'stream') {
                     setIde(1);
                     console.log('Not live');
+                } else {
+                    setIsStreamLive(true);
                 }
+                setShow(true);
             }
         } catch (e) {
             console.log(e.message);
         }
-    }, [triggered, update]);
+    }, [triggered]);
 
     // Dispose the Video.js player when the functional component unmounts
     useEffect(() => {

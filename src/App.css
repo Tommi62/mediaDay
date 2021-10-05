@@ -1,6 +1,6 @@
 .App {
   text-align: left;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .body {
@@ -15,14 +15,14 @@
 }
 
 .blockHeader {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: medium;
   text-transform: uppercase;
   margin: auto;
 }
 
 .blockParagraph {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: small;
   margin-top: 1rem;
 }
@@ -54,7 +54,7 @@
   background-attachment: fixed;
   background-position: 50% top;
   background-size: cover;
-  background-image: url('pngegg.png');
+  background-image: url("pngegg.png");
   background-color: white;
 }
 
@@ -82,7 +82,7 @@
 }
 
 .section:before {
-  content: '';
+  content: "";
   display: inline-block;
   height: 100%;
   width: 0px;
@@ -133,20 +133,20 @@
 }
 
 .speakerName {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: medium;
   text-transform: uppercase;
 }
 
 .speakerCompany {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: small;
   text-transform: uppercase;
   margin-bottom: 2rem;
 }
 
 .speakerText {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: small;
 }
 

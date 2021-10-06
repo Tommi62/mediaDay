@@ -39,3 +39,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+.videoPageTitle {
+    text-align: center;
+}

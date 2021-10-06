@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 import FullCalendar from '@fullcalendar/react'; // must go before plugins
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction'; // needed for dayClick
@@ -20,7 +18,7 @@ const Calendar = () => {
       slotLabelFormat={[{ hour: 'numeric', minute: '2-digit' }]}
       slotMinTime='08:00:00'
       slotMaxTime='17:00:00'
-      height={480}
+      height={504}
       views={{
         timeGrid: {
           visibleRange: {

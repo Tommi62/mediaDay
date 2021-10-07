@@ -1,10 +1,11 @@
 {
   "events": [
     {
-      "videoUrl": "mediaday-123",
+      "videoUrl": "Sami_Marttinen",
       "title": "Käyttäjäkokemuksen merkitys IT-järjestelmissä",
       "startTime": "11:00",
-      "speakerName": "Sami Marttinen, SWAPPIE",
+      "speakerName": "Sami Marttinen",
+      "speakerCompany": "SWAPPIE",
       "speakerImage": "/media/speakers/sami_marttinen.jpg",
       "speakerDiscription": "Sami Marttinen esittelee Swappien tarinan, ja teknologian merkityksen yrityksen nousun taustalla. Puheenvuoro esitetään suomeksi.",
       "endTime": "11:55",
@@ -13,10 +14,11 @@
       "streamVideoType": "application/x-mpegurl"
     },
     {
-      "videoUrl": "mediaday-567",
+      "videoUrl": "Frans_Tihveräinen",
       "title": "Yrittäjyys korkean teknologian alalla",
       "startTime": "12:00",
-      "speakerName": "Frans Tihveräinen, FLYAR",
+      "speakerName": "Frans Tihveräinen",
+      "speakerCompany": "FLYAR",
       "speakerImage": "/media/speakers/frans_tihverainen.jpg",
       "speakerDiscription": "Erilainen urapolku - Frans Tihveräinen: Suoraan koulun penkiltä pitkän linjan AR-ammattilaiseksi. Frans kertoo omasta nousustaan AR-ammattilaiseksi, ja esittelee omat vinkkinsä yrittäjyydestä haaveileville opiskelijoille. Puheenvuoro esitetään suomeksi.",
       "endTime": "12:55",
@@ -25,10 +27,11 @@
       "streamVideoType": "video/webm"
     },
     {
-      "videoUrl": "opiskelupaiva",
+      "videoUrl": "Mikko_Kodisoja",
       "title": "Tulevaisuuden ratkaisut elokuvatuotannossa",
       "startTime": "10:00",
-      "speakerName": "Mikko Kodisoja, FIREFRAME",
+      "speakerName": "Mikko Kodisoja",
+      "speakerCompany": "FIREFRAME",
       "speakerImage": "/media/speakers/mikko_kodisoja.jpg",
       "speakerDiscription": "Yrityksen perustaja Mikko Kodisoja kertoo, miksi vaihtoi peliteollisuuden elokuvamaailmaan. Kuumana puheenaiheena Suomen ensimmäinen Hollywood-tason ledseinä-studio. Puheenvuoro esitetään englanniksi.",
       "endTime": "10:55",
@@ -37,10 +40,11 @@
       "streamVideoType": "application/x-mpegurl"
     },
     {
-      "videoUrl": "opiskelupaiva2",
+      "videoUrl": "Ulrich_Mors",
       "title": "Kamerauutuudet indie-tuotannossa",
       "startTime": "14:00",
-      "speakerName": "Ulrich Mors, Sony Independent Expert",
+      "speakerName": "Ulrich Mors",
+      "speakerCompany": "Sony Independent Expert",
       "speakerImage": "/media/speakers/Ulrich_Mors.jpg",
       "speakerDiscription": "Ulrich Mors esittelee Sonyn uusimmat videokamerauutuudet ammattimaisten videotuotantojen käyttöön. Näkökulmana kameroiden käyttö eurooppalaisessa indie-elokuvatuotannossa, josta Ulrichilla on itsessään paljon kokemusta. Puheenvuoro esitetään englanniksi.",
       "endTime": "14:55",

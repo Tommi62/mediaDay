@@ -1,6 +1,5 @@
 .App {
   text-align: left;
-  margin-top: 3rem;
 }
 
 .body {
@@ -30,6 +29,13 @@
 .homeBody {
   margin: 0.7rem;
   margin-top: 25rem;
+  background-color: #f9fbff;
+  border-radius: 2px;
+}
+
+.pageBody {
+  margin: 0.7rem;
+  margin-top: 5rem;
   background-color: #f9fbff;
   border-radius: 2px;
 }
@@ -169,10 +175,8 @@
 }
 
 .socials img {
-  color: rgb(94, 94, 94);
   width: 3.2rem;
   height: 3rem;
-  fill: green;
 }
 
 .footer {
@@ -196,6 +200,59 @@
   text-transform: uppercase;
 }
 
+.navLogoText {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.navLogoText div {
+  font-size: small;
+}
+
+.navSpeakerCompanyText {
+  font-size: x-small;
+}
+
+.navbar-brand {
+  margin: 0 1rem;
+}
+
+.navbar {
+  text-align: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: medium;
+  text-transform: uppercase;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    43deg,
+    rgb(0 0 0 / 38%) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  --bs-bg-opacity: 0 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+  opacity: 1 !important;
+  transition: 0.3s;
+}
+
+.nav-link {
+  text-shadow: 0px 0px 10px #000000;
+  color: white !important;
+}
+
+.nav-link:focus {
+  font-size: large;
+  text-shadow: 0px 0px 10px #ffffff;
+  color: rgb(255, 255, 255) !important;
+}
+
 .speakerCompany {
   font-family: "Montserrat", sans-serif;
   font-size: small;
@@ -206,6 +263,23 @@
 .speakerText {
   font-family: "Montserrat", sans-serif;
   font-size: small;
+}
+
+.calendar {
+  padding: 1rem 0 5rem 0;
+  margin: auto;
+  align-self: center;
+  max-width: 40rem;
+}
+
+.scheduleHeader {
+  padding-top: 3rem;
+  font-family: "Monoton", sans-serif;
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ff0000;
+  letter-spacing: 0.6rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -233,6 +307,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .scheduleHeader {
+    font-size: large;
+  }
   .carousel-caption {
     height: fit-content;
   }
@@ -241,5 +318,11 @@
   }
   .carousel-caption p {
     font-size: 0.7rem;
+  }
+  .nav-link:focus {
+    font-size: small;
+  }
+  .navbar {
+    font-size: x-small;
   }
 }

@@ -17,6 +17,10 @@ const VideoPage = () => {
     const [isStreamLive, setIsStreamLive] = useState(false);
     const [isItStreamTime, setIsItStreamTime] = useState(false);
     const [streamStatus, setStreamStatus] = useState('');
+    const [dateTimeObject, setDateTimeObject] = useState({
+        date: '',
+        time: '',
+    });
 
     useEffect(() => {
         try {
@@ -56,12 +60,20 @@ const VideoPage = () => {
         try {
             const now = moment().format("YYYY-MM-DD HH:mm:ss");
             const streamStartTime = mediaData.media[0].startTime;
+            const formatDate = moment(streamStartTime).format("D.M.YYYY");
+            const formatTime = moment(streamStartTime).format("H.mm");
+            const timeDateObject = {
+                date: formatDate,
+                time: formatTime,
+            }
+            setDateTimeObject(timeDateObject);
             const compareStartTime = moment(streamStartTime, "YYYY-MM-DD HH:mm:ss").diff(now, "seconds");
 
             const streamEndTime = mediaData.media[0].endTime;
             const compareEndTime = moment(streamEndTime, "YYYY-MM-DD HH:mm:ss").diff(now, "seconds");
             const endTimeWithSafeMargin = compareEndTime + 7200;
             console.log('END', endTimeWithSafeMargin);
+
             if (compareStartTime <= 0 && endTimeWithSafeMargin >= 0) {
                 if (compareEndTime <= 0) {
                     setStreamStatus('overTime')
@@ -88,7 +100,7 @@ const VideoPage = () => {
                     <Col>
                         {streamStatus === '' && ''}
                         {streamStatus === 'inFuture' &&
-                            <h2 className="display-5 videoPageTitle">Striimi starttaa tällä sivulla {mediaData.media[0].startTime}</h2>
+                            <h2 className="display-5 videoPageTitle">Striimi starttaa tällä sivulla {dateTimeObject.date} klo. {dateTimeObject.time}</h2>
                         }
                         {streamStatus === 'showTime' &&
                             <div>

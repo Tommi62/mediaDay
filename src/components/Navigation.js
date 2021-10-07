@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import {Nav, Navbar} from 'react-bootstrap';
-import logo from '../logo.svg';
+import logo from '../android.png';
 
 
 const Navigation = () => {

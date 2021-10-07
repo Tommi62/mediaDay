@@ -31,15 +31,16 @@ const Home = () => {
             <Container fluid>
                 <Row>
                     <div className="section fbg"></div>
+                    <h1 className='logo'>Media Day</h1>
                 </Row>
                 <Row className='homeBody card3'>
-                    <Col xs={12} lg={6}>
+                    <Col lg={12} xl={7} xxl={6}>
                         <Container fluid className='carouselContainer'>
                             <FlipCountdown time={closest} />
                             <TextCarousel className='carousel' textArray={texts}></TextCarousel>
                         </Container>
                     </Col>
-                    <Col xs={12} lg={6}>
+                    <Col lg={12} xl={5} xxl={6}>
                         <Container fluid>
                             {/* <h1>Puhujat</h1> */}
                             {texts.speakers.map((speaker) => {

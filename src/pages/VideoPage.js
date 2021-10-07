@@ -145,6 +145,7 @@ const VideoPage = () => {
                                                 setShow={setShow}
                                                 setIsStreamLive={setIsStreamLive}
                                                 isItStreamTime={isItStreamTime}
+                                                page={'VideoPage'}
                                             />
                                         }
                                     </Row>
@@ -171,6 +172,7 @@ const VideoPage = () => {
                                                 setShow={setShow}
                                                 setIsStreamLive={setIsStreamLive}
                                                 isItStreamTime={isItStreamTime}
+                                                page={'VideoPage'}
                                             />
                                         }
                                     </Row>

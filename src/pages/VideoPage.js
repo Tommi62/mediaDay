@@ -94,109 +94,112 @@ const VideoPage = () => {
     }, []);
 
     return (
-        <div>
-            <Container>
-                <Row>
-                    <Col>
-                        {streamStatus === '' && ''}
-                        {streamStatus === 'inFuture' &&
-                            <h2 className="display-5 videoPageTitle">Striimi starttaa tällä sivulla {dateTimeObject.date} klo. {dateTimeObject.time}</h2>
-                        }
-                        {streamStatus === 'showTime' &&
-                            <div>
-                                {isStreamLive ? (
-                                    <h2 className="display-5 videoPageTitle">Striimi on käynnissä</h2>
-                                ) : (
-                                    <h2 className="display-5 videoPageTitle">Striimi alkaa pian</h2>
-                                )
-                                }
-                            </div>
-                        }
-                        {streamStatus === 'overTime' &&
-                            <div>
-                                {isStreamLive ? (
-                                    <h2 className="display-5 videoPageTitle">Striimi on käynnissä</h2>
-                                ) : (
-                                    <h2 className="display-5 videoPageTitle">Striimi on päättynyt</h2>
-                                )
-                                }
-                            </div>
-                        }
-                        {streamStatus === 'over' &&
-                            <h2 className="display-5 videoPageTitle">Tapahtumaan liittyvät videot</h2>
-                        }
-                    </Col>
-                </Row>
-                {videoStream !== {} &&
+        <Container fluid>
+            <Row>
+                <div className="section fbg"></div>
+            </Row>
+            <div className='pageBody card3'>
+                <Container>
                     <Row>
-                        {show ? (
-                            <Col lg={9} style={{ marginLeft: '15px' }}>
-                                <Row>
-                                    {mediaType !== '' &&
-                                        <Video
-                                            url={videoStream.url}
-                                            type={videoStream.streamVideoType}
-                                            mediaType={mediaType}
-                                            setIde={setIde}
-                                            setShow={setShow}
-                                            setIsStreamLive={setIsStreamLive}
-                                            isItStreamTime={isItStreamTime}
-                                            page={'VideoPage'}
-                                        />
-                                    }
-                                </Row>
-                                <Row>
-                                    <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
-                                        <h4 className="videoTitle">{videoStream.name}</h4>
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <div className="d-flex justify-content-start description" style={{ padding: 0 }}>
-                                        {videoStream.description}
-                                    </div>
-                                </Row>
-                            </Col>
-                        ) : (
-                            <Col lg={9} style={{ marginLeft: '15px' }}>
-                                <Row style={{ display: 'none' }}>
-                                    {mediaType !== '' &&
-                                        <Video
-                                            url={videoStream.url}
-                                            type={videoStream.streamVideoType}
-                                            mediaType={mediaType}
-                                            setIde={setIde}
-                                            setShow={setShow}
-                                            setIsStreamLive={setIsStreamLive}
-                                            isItStreamTime={isItStreamTime}
-                                            page={'VideoPage'}
-                                        />
-                                    }
-                                </Row>
-                                <Row style={{ display: 'none' }}>
-                                    <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
-                                        <h4 className="videoTitle">{videoStream.name}</h4>
-                                    </Col>
-                                </Row>
-                                <Row style={{ display: 'none' }}>
-                                    <div className="d-flex justify-content-start description" style={{ padding: 0 }}>
-                                        {videoStream.description}
-                                    </div>
-                                </Row>
-                            </Col>
-                        )}
                         <Col>
-                            <ListGroup className="videoList">
-                                {videoArray.map((item) => (
-                                    <VideoButton id={item.id} name={item.name} thumbnail={item.thumbnail} setIde={setIde} />
-                                ))}{' '}
-                            </ListGroup>
+                            {streamStatus === '' && ''}
+                            {streamStatus === 'inFuture' &&
+                                <h2 className="display-5 videoPageTitle">Striimi starttaa tällä sivulla {dateTimeObject.date} klo. {dateTimeObject.time}</h2>
+                            }
+                            {streamStatus === 'showTime' &&
+                                <div>
+                                    {isStreamLive ? (
+                                        <h2 className="display-5 videoPageTitle">Striimi on käynnissä</h2>
+                                    ) : (
+                                        <h2 className="display-5 videoPageTitle">Striimi alkaa pian</h2>
+                                    )
+                                    }
+                                </div>
+                            }
+                            {streamStatus === 'overTime' &&
+                                <div>
+                                    {isStreamLive ? (
+                                        <h2 className="display-5 videoPageTitle">Striimi on käynnissä</h2>
+                                    ) : (
+                                        <h2 className="display-5 videoPageTitle">Striimi on päättynyt</h2>
+                                    )
+                                    }
+                                </div>
+                            }
+                            {streamStatus === 'over' &&
+                                <h2 className="display-5 videoPageTitle">Tapahtumaan liittyvät videot</h2>
+                            }
                         </Col>
                     </Row>
-                }
-            </Container>
-            <br />
-            {/*  */}
-        </div>
+                    {videoStream !== {} &&
+                        <Row>
+                            {show ? (
+                                <Col lg={9} style={{ marginLeft: '15px' }}>
+                                    <Row>
+                                        {mediaType !== '' &&
+                                            <Video
+                                                url={videoStream.url}
+                                                type={videoStream.streamVideoType}
+                                                mediaType={mediaType}
+                                                setIde={setIde}
+                                                setShow={setShow}
+                                                setIsStreamLive={setIsStreamLive}
+                                                isItStreamTime={isItStreamTime}
+                                            />
+                                        }
+                                    </Row>
+                                    <Row>
+                                        <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
+                                            <h4 className="videoTitle">{videoStream.name}</h4>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <div className="d-flex justify-content-start description" style={{ padding: 0 }}>
+                                            {videoStream.description}
+                                        </div>
+                                    </Row>
+                                </Col>
+                            ) : (
+                                <Col lg={9} style={{ marginLeft: '15px' }}>
+                                    <Row style={{ display: 'none' }}>
+                                        {mediaType !== '' &&
+                                            <Video
+                                                url={videoStream.url}
+                                                type={videoStream.streamVideoType}
+                                                mediaType={mediaType}
+                                                setIde={setIde}
+                                                setShow={setShow}
+                                                setIsStreamLive={setIsStreamLive}
+                                                isItStreamTime={isItStreamTime}
+                                            />
+                                        }
+                                    </Row>
+                                    <Row style={{ display: 'none' }}>
+                                        <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
+                                            <h4 className="videoTitle">{videoStream.name}</h4>
+                                        </Col>
+                                    </Row>
+                                    <Row style={{ display: 'none' }}>
+                                        <div className="d-flex justify-content-start description" style={{ padding: 0 }}>
+                                            {videoStream.description}
+                                        </div>
+                                    </Row>
+                                </Col>
+                            )}
+                            <Col>
+                                <ListGroup className="videoList">
+                                    {videoArray.map((item) => (
+                                        <VideoButton id={item.id} name={item.name} thumbnail={item.thumbnail} setIde={setIde} />
+                                    ))}{' '}
+                                </ListGroup>
+                            </Col>
+                        </Row>
+                    }
+                </Container>
+                <br />
+                {/*  */}
+            </div>
+        </Container>
     );
 }
 

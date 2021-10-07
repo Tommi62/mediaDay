@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 import FullCalendar from '@fullcalendar/react'; // must go before plugins
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -12,12 +12,12 @@ const Calendar = () => {
     <FullCalendar
       locales={[fiLocale]}
       locale='fi'
-      dayHeaderContent='Mitä halutaankaan "dayHeaderContent Calendar.js sisään"' //{false} poistais koko osion
+      dayHeaderContent={false} //{false} poistais koko osion
       plugins={[timeGridPlugin, interactionPlugin]}
       initialView='timeGrid'
       headerToolbar={false}
       allDaySlot={false}
-      slotLabelFormat={[{ hour: 'numeric', minute: '2-digit' }]}
+      slotLabelFormat={[{hour: 'numeric', minute: '2-digit'}]}
       slotMinTime='08:00:00'
       slotMaxTime='17:00:00'
       height={480}
@@ -35,7 +35,7 @@ const Calendar = () => {
         const [endHour, endMinute] = data.endTime.split(':').map(Number);
 
         return {
-          title: data.title + ' - ' + data.speakerName,
+          title: data.title + ' - ' + data.speakerName + ', ' + data.speakerCompany,
           start: new Date(year, month - 1, day, hour, minute),
           end: new Date(year, month - 1, day, endHour, endMinute),
           url: `#/event/${data.videoUrl}`,

@@ -5,6 +5,26 @@
 
 .body {
   padding-bottom: 250px;
+  min-height: calc(100vh - 80px);
+}
+
+.logo {
+  font-family: "Monoton", sans-serif;
+  font-size: 6rem;
+  text-transform: uppercase;
+  margin: auto;
+  width: fit-content;
+  position: absolute;
+  letter-spacing: 1rem;
+  top: 16rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
 .homeBody {
@@ -41,7 +61,13 @@
 }
 
 .carousel-caption {
+  font-family: "Montserrat", sans-serif;
   text-align: start;
+  text-shadow: 0px 0px 5px #000000;
+  bottom: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  height: fit-content;
 }
 
 .speakerImage {
@@ -117,6 +143,38 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+.countdownBg {
+  background-color: rgb(41, 41, 41);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 1rem;
+  height: 20rem;
+}
+
+.countdownMainText {
+  font-family: "Montserrat", sans-serif;
+  font-size: medium;
+  text-align: center;
+  color: #f2f2f2;
+  padding-top: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.flip-countdown-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: medium;
+  color: #f2f2f2;
+}
+
+.socials img {
+  color: rgb(94, 94, 94);
+  width: 3.2rem;
+  height: 3rem;
+  fill: green;
+}
+
 .footer {
   background-color: #f2f2f2;
   clear: both;
@@ -161,5 +219,27 @@
   .card4 {
     box-shadow: none;
     transition: none;
+  }
+  .logo {
+    text-align: center;
+    font-family: "Monoton", sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: auto;
+    width: fit-content;
+    position: absolute;
+    letter-spacing: 1rem;
+    top: 16rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .carousel-caption {
+    height: fit-content;
+  }
+  .carousel-caption h3 {
+    font-size: 1rem;
+  }
+  .carousel-caption p {
+    font-size: 0.7rem;
   }
 }

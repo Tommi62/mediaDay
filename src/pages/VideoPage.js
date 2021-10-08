@@ -7,11 +7,13 @@ import Video from '../components/Video';
 import VideoButton from '../components/VideoButton';
 
 import mediaData from '../data/MediaData.json';
+import eventData from '../data/events.json';
 
 const VideoPage = () => {
     const [ide, setIde] = useState(0);
     const [videoArray, setVideoArray] = useState([]);
     const [videoStream, setVideoStream] = useState({});
+    const [eventInfo, setEventInfo] = useState({});
     const [mediaType, setMediaType] = useState('');
     const [show, setShow] = useState(false);
     const [isStreamLive, setIsStreamLive] = useState(false);
@@ -93,6 +95,39 @@ const VideoPage = () => {
         }
     }, []);
 
+    useEffect(() => {
+        try {
+            if (isItStreamTime) {
+                const interval = setInterval(() => {
+                    console.log('Interval');
+                    if (!isItStreamTime) {
+                        clearInterval(interval);
+                    }
+                    const now = moment().format("YYYY-MM-DD HH:mm:ss");
+                    let infoFound = false;
+                    for (let i = 0; i < eventData.events.length; i++) {
+                        const eventStartTime = eventData.events[i].startDate + ' ' + eventData.events[i].startTime;
+                        const eventEndTime = eventData.events[i].startDate + ' ' + eventData.events[i].endTime;
+
+                        const compareStartTime = moment(eventStartTime, "DD.MM.YYYY HH:mm").diff(now, "seconds");
+                        const compareEndTime = moment(eventEndTime, "DD.MM.YYYY HH:mm").diff(now, "seconds");
+                        if (compareStartTime <= 0 && compareEndTime >= 0) {
+                            setEventInfo(eventData.events[i]);
+                            infoFound = true;
+                            break;
+                        }
+                    }
+                    if (!infoFound) {
+                        setEventInfo(eventData.placeholder[0]);
+                    }
+                }, 1000);
+                return () => clearInterval(interval);
+            }
+        } catch (e) {
+            console.log(e.message);
+        }
+    }, [isItStreamTime]);
+
     return (
         <Container fluid>
             <Row>
@@ -149,16 +184,38 @@ const VideoPage = () => {
                                             />
                                         }
                                     </Row>
-                                    <Row>
-                                        <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
-                                            <h4 className="videoTitle">{videoStream.name}</h4>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <div className="d-flex justify-content-start description" style={{ padding: 0 }}>
-                                            {videoStream.description}
-                                        </div>
-                                    </Row>
+                                    {mediaType === 'stream' &&
+                                        <Row>
+                                            <Row>
+                                                {eventInfo !== {} &&
+                                                    <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
+                                                        <h4 className="videoTitle">{eventInfo.title}</h4>
+                                                    </Col>
+                                                }
+                                            </Row>
+                                            <Row>
+                                                {eventInfo !== {} &&
+                                                    <div className="d-flex justify-content-start description" style={{ padding: 0 }}>
+                                                        {eventInfo.speakerDiscription}
+                                                    </div>
+                                                }
+                                            </Row>
+                                        </Row>
+                                    }
+                                    {mediaType === 'video' &&
+                                        <Row>
+                                            <Row>
+                                                <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
+                                                    <h4 className="videoTitle">{videoStream.name}</h4>
+                                                </Col>
+                                            </Row>
+                                            <Row>
+                                                <div className="d-flex justify-content-start description" style={{ padding: 0 }}>
+                                                    {videoStream.description}
+                                                </div>
+                                            </Row>
+                                        </Row>
+                                    }
                                 </Col>
                             ) : (
                                 <Col lg={9} style={{ marginLeft: '15px' }}>

@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  font-family: "Montserrat", sans-serif;
 }
 
 .body {
@@ -15,7 +16,7 @@
   width: fit-content;
   position: absolute;
   letter-spacing: 1rem;
-  top: 16rem;
+  top: 14rem;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #ffffff;
@@ -41,14 +42,12 @@
 }
 
 .blockHeader {
-  font-family: "Montserrat", sans-serif;
   font-size: medium;
   text-transform: uppercase;
   margin: auto;
 }
 
 .blockParagraph {
-  font-family: "Montserrat", sans-serif;
   font-size: small;
   margin-top: 1rem;
 }
@@ -62,12 +61,15 @@
   padding: 1rem;
 }
 
+.videoHomepage {
+  padding: 2rem 0.8rem;
+}
+
 .carousel {
-  margin: 2rem 1rem;
+  margin: 2rem 0;
 }
 
 .carousel-caption {
-  font-family: "Montserrat", sans-serif;
   text-align: start;
   text-shadow: 0px 0px 5px #000000;
   bottom: 0;
@@ -82,6 +84,41 @@
   object-fit: cover;
 }
 
+.speakerCard {
+  margin-top: 1rem;
+  padding: 1.5rem;
+}
+
+.speakerDescription {
+  margin-top: 1rem;
+}
+
+.speakerVideo {
+  margin-top: 1rem;
+}
+
+.speakerCard h5 {
+  text-transform: uppercase;
+}
+
+.speakerCard h5 + p {
+  text-transform: uppercase;
+  font-size: small;
+  color: #4e4e4e;
+}
+
+.speakerShowtimeText {
+  margin-top: 1.5rem;
+}
+
+.speakerShowtimeText,
+.speakerShowtimeText + p {
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+  font-size: small;
+  color: #4e4e4e;
+}
+
 .fbg {
   background-attachment: fixed;
   background-position: 50% top;
@@ -91,11 +128,6 @@
 }
 
 .section {
-  /* background: cover;
-  height: 25rem;
-  position: relative;
-  text-align: center;
-  width: 100%; */
   height: 100vh;
   position: fixed;
   z-index: -20;
@@ -111,6 +143,11 @@
   margin: 2rem 1rem;
   max-width: 65rem;
   padding: 6rem 2rem;
+}
+
+.logoRow img {
+  width: 10rem;
+  height: 10rem;
 }
 
 .section:before {
@@ -160,7 +197,6 @@
 }
 
 .countdownMainText {
-  font-family: "Montserrat", sans-serif;
   font-size: medium;
   text-align: center;
   color: #f2f2f2;
@@ -169,7 +205,6 @@
 }
 
 .flip-countdown-title {
-  font-family: "Montserrat", sans-serif;
   font-size: medium;
   color: #f2f2f2;
 }
@@ -195,7 +230,6 @@
 }
 
 .speakerName {
-  font-family: "Montserrat", sans-serif;
   font-size: medium;
   text-transform: uppercase;
 }
@@ -224,7 +258,6 @@
 .navbar {
   text-align: center;
   justify-content: center;
-  font-family: "Montserrat", sans-serif;
   font-size: medium;
   text-transform: uppercase;
   background: rgb(0, 0, 0);
@@ -254,14 +287,12 @@
 }
 
 .speakerCompany {
-  font-family: "Montserrat", sans-serif;
   font-size: small;
   text-transform: uppercase;
   margin-bottom: 2rem;
 }
 
 .speakerText {
-  font-family: "Montserrat", sans-serif;
   font-size: small;
 }
 
@@ -324,5 +355,9 @@
   }
   .navbar {
     font-size: x-small;
+  }
+  .logoRow img {
+    width: 5rem;
+    height: 5rem;
   }
 }

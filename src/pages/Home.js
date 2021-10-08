@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Col, Row, Container } from 'react-bootstrap';
+import React, {useEffect, useState} from 'react';
+import {Col, Row, Container} from 'react-bootstrap';
 import Speaker from '../components/Speaker';
 import texts from '../data/texts.json';
 import TextCarousel from './../components/TextCarousel';
@@ -7,6 +7,7 @@ import FlipCountdown from './../components/FlipCountdown';
 import moment from 'moment';
 import mediaData from '../data/MediaData.json';
 import Video from '../components/Video';
+import Logos from '../components/Logos';
 
 const Home = () => {
     const [ide, setIde] = useState(0);
@@ -20,7 +21,7 @@ const Home = () => {
 
     useEffect(() => {
         try {
-            const eventResult = mediaData.media.find(({ id }) =>
+            const eventResult = mediaData.media.find(({id}) =>
                 id === ide
             );
 
@@ -93,13 +94,13 @@ const Home = () => {
                     <Col lg={12} xl={7} xxl={6}>
                         <Container fluid className='carouselContainer'>
                             {isItStreamTime ? (
-                                <Row style={{ margin: 0 }}>
+                                <Row>
                                     {isStreamLive ? (
-                                        <Col style={{ margin: 0 }}>
+                                        <Col>
                                             {show ? (
-                                                <Col style={{ margin: 0 }}>
+                                                <Col>
                                                     {mediaType !== '' &&
-                                                        <Row style={{ margin: 0 }}>
+                                                        <Row className='videoHomepage'>
                                                             {videoStream !== {} &&
                                                                 <Video
                                                                     url={videoStream.url}
@@ -116,9 +117,9 @@ const Home = () => {
                                                     }
                                                 </Col>
                                             ) : (
-                                                <Col style={{ display: 'none' }}>
+                                                <Col style={{display: 'none'}}>
                                                     {mediaType !== '' &&
-                                                        <Row>
+                                                        <Row className='videoHomepage'>
                                                             {videoStream !== {} &&
                                                                 <Video
                                                                     url={videoStream.url}
@@ -138,17 +139,17 @@ const Home = () => {
                                             }
                                         </Col>
                                     ) : (
-                                        <Col className="countdownBg" style={{ margin: 0 }}>
-                                            <h4 style={{ color: 'white' }}>Striimi alkaa pian</h4>
+                                        <Col className="countdownBg">
+                                            <h4 style={{color: 'white'}}>Striimi alkaa pian</h4>
                                         </Col>
                                     )}
                                 </Row>
                             ) : (
-                                <Row style={{ margin: 0 }}>
+                                <Row>
                                     {streamOver ? (
-                                        <Col style={{ margin: 0 }} >
+                                        <Col >
                                             {mediaType !== '' &&
-                                                <Row style={{ margin: 0 }}>
+                                                <Row className='videoHomepage'>
                                                     {videoStream !== {} &&
                                                         <Video
                                                             url={videoStream.url}
@@ -171,6 +172,9 @@ const Home = () => {
                             )}
                             <Row>
                                 <TextCarousel className='carousel' textArray={texts}></TextCarousel>
+                            </Row>
+                            <Row className='logoRow'>
+                                <Logos />
                             </Row>
                         </Container>
                     </Col>

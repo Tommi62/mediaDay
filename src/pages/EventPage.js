@@ -5,8 +5,10 @@ import Video from '../components/Video';
 import Image from 'react-bootstrap/Image';
 
 import eventData from '../data/events.json';
+import {useMediaQuery} from 'react-responsive';
 
 const EventPage = () => {
+  const isMobile = useMediaQuery({query: `(max-width: 760px)`});
   const {id} = useParams();
 
   const eventResult = eventData.events.find(({videoUrl}) => videoUrl === id);
@@ -26,35 +28,34 @@ const EventPage = () => {
             <Col>
               <h1 className='display-4'>{eventResult.name}</h1>
             </Col>
-            <Col>Otsikko</Col>
           </Row>
           <Row>
-            <Col lg={9}>
+            <Col lg={9} className='speakerVideo'>
               <Video
                 url={eventResult.streamUrl}
                 type={eventResult.streamVideoType}
               />
             </Col>
-            <Col>
-              <br />
-              <p>
-                Päivämäärä: <br /> {eventResult.startDate} {eventResult.startTime}
+            <Col className={'speakerCard' + ((isMobile) ? ('') : (' card3'))}>
+              <h5>
+                {eventResult.speakerName}
+              </h5>
+              <p>{eventResult.speakerCompany}</p>
+              <Image
+                src={eventResult.speakerImage}
+                alt={eventResult.speakerName}
+                fluid
+                rounded
+              />
+              <p className='speakerDescription'>
+                {eventResult.speakerDiscription}
+              </p>
+              <p className='speakerShowtimeText'>
+                Media Day Puheenvuoro:
               </p>
               <p>
-                Puhuja:
-                <br /> {eventResult.speakerName + ', ' + eventResult.speakerCompany} <br />
-                <Image
-                  src={eventResult.speakerImage}
-                  alt={eventResult.speakerName}
-                  fluid
-                  rounded
-                />
+                {eventResult.startDate} {eventResult.startTime}
               </p>
-              <p>
-                Puhujatietoja:
-                <br /> {eventResult.speakerDiscription}
-              </p>
-              <br />
             </Col>
           </Row>
         </Container>

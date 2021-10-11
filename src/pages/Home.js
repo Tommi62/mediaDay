@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {Col, Row, Container} from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Col, Row, Container } from 'react-bootstrap';
 import Speaker from '../components/Speaker';
 import texts from '../data/texts.json';
 import TextCarousel from './../components/TextCarousel';
@@ -18,10 +18,12 @@ const Home = () => {
     const [isStreamLive, setIsStreamLive] = useState(true);
     const [isItStreamTime, setIsItStreamTime] = useState(false);
     const [streamOver, setStreamOver] = useState(false);
+    const [isCountdownOver, setIsCountdownOver] = useState(false);
+    const [startInterval, setStartInterval] = useState(false);
 
     useEffect(() => {
         try {
-            const eventResult = mediaData.media.find(({id}) =>
+            const eventResult = mediaData.media.find(({ id }) =>
                 id === ide
             );
 
@@ -43,6 +45,7 @@ const Home = () => {
             });
 
             const now = moment().format("YYYY-MM-DD HH:mm:ss");
+            console.log('NOW', now);
 
             const streamStartTime = mediaData.media[0].startTime;
             const compareStartTime = moment(streamStartTime, "YYYY-MM-DD HH:mm:ss").diff(now, "seconds");
@@ -61,6 +64,7 @@ const Home = () => {
                     setIsItStreamTime(true);
                 }
             } else if (compareStartTime > 0) {
+                setStartInterval(true);
                 setIsItStreamTime(false);
                 const closest = times.reduce((prev, curr) => {
                     const currentCompare = moment(curr, "YYYY-MM-DD HH:mm:ss").diff(now, "minutes");
@@ -81,7 +85,27 @@ const Home = () => {
         } catch (e) {
             console.log(e.message);
         }
-    }, [isStreamLive]);
+    }, [isStreamLive, isCountdownOver]);
+
+    useEffect(() => {
+        try {
+            if (startInterval) {
+                const interval = setInterval(() => {
+                    console.log('INTER');
+                    const now = moment().format("YYYY-MM-DD HH:mm:ss");
+                    const streamStartTime = mediaData.media[0].startTime;
+                    const compareStartTime = moment(streamStartTime, "YYYY-MM-DD HH:mm:ss").diff(now, "seconds");
+                    if (compareStartTime <= 0) {
+                        setIsCountdownOver(true);
+                        clearInterval(interval);
+                    }
+                }, 1000);
+                return () => clearInterval(interval);
+            }
+        } catch (e) {
+            console.log(e.message);
+        }
+    }, [startInterval]);
 
     return (
         <div>
@@ -117,7 +141,7 @@ const Home = () => {
                                                     }
                                                 </Col>
                                             ) : (
-                                                <Col style={{display: 'none'}}>
+                                                <Col style={{ display: 'none' }}>
                                                     {mediaType !== '' &&
                                                         <Row className='videoHomepage'>
                                                             {videoStream !== {} &&
@@ -140,7 +164,7 @@ const Home = () => {
                                         </Col>
                                     ) : (
                                         <Col className="countdownBg">
-                                            <h4 style={{color: 'white'}}>Striimi alkaa pian</h4>
+                                            <h4 style={{ color: 'white' }}>Striimi alkaa pian</h4>
                                         </Col>
                                     )}
                                 </Row>

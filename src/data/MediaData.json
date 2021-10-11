@@ -5,8 +5,8 @@
       "type": "stream",
       "name": "Striimi",
       "description": "Tähän tulis sit sen striimin kuvaus.",
-      "startTime": "2021-10-08 16:15:00",
-      "endTime": "2021-10-08 16:23:00",
+      "startTime": "2021-10-12 15:10:00",
+      "endTime": "2021-10-12 17:00:00",
       "url": "http://195.148.104.124:1935/jakelu/tommi/playlist.m3u8",
       "streamVideoType": "application/x-mpegurl",
       "thumbnail": "http://placekitten.com/175/98"

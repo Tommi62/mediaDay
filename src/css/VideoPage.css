@@ -43,3 +43,65 @@
 .videoPageTitle {
     text-align: center;
 }
+
+.videoPlayerRow {
+    margin: auto;
+}
+
+.videoInfo {
+    margin: auto;
+}
+
+@media only screen and (max-width: 1200px) {
+    .videoCardTitle {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .videoCard {
+        max-width: 70%;
+        margin: auto;
+    }
+
+    .videoList {
+        margin-top: 1rem;
+        max-height: 50vh;
+    }
+
+    .videoCardTitle {
+        max-width: 100%;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .videoPageTitle {
+        font-size: 1.5rem;
+        margin-top: 0.3rem;
+    }
+
+    .videoPlayerCol {
+        width: 95%;
+        margin: auto;
+    }
+
+    .videoPlayerRow {
+        margin: auto;
+    }
+
+    .videoTitle {
+        font-size: 0.9rem;
+    }
+
+    .description {
+        font-size: 0.7rem;
+    }
+
+    .videoCardTitle {
+        font-size: 0.8rem;
+    }
+}

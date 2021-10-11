@@ -134,7 +134,7 @@ const VideoPage = () => {
                 <div className="section fbg"></div>
             </Row>
             <div className='pageBody card3'>
-                <Container>
+                <Container >
                     <Row>
                         <Col>
                             {streamStatus === '' && ''}
@@ -169,8 +169,8 @@ const VideoPage = () => {
                     {videoStream !== {} &&
                         <Row>
                             {show ? (
-                                <Col lg={9} style={{ marginLeft: '15px' }}>
-                                    <Row>
+                                <Col lg={9} className="videoPlayerCol" >
+                                    <Row className="videoPlayerRow">
                                         {mediaType !== '' &&
                                             <Video
                                                 url={videoStream.url}
@@ -185,7 +185,7 @@ const VideoPage = () => {
                                         }
                                     </Row>
                                     {mediaType === 'stream' &&
-                                        <Row>
+                                        <Row className="videoInfo">
                                             <Row>
                                                 {eventInfo !== {} &&
                                                     <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
@@ -203,7 +203,7 @@ const VideoPage = () => {
                                         </Row>
                                     }
                                     {mediaType === 'video' &&
-                                        <Row>
+                                        <Row className="videoInfo">
                                             <Row>
                                                 <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
                                                     <h4 className="videoTitle">{videoStream.name}</h4>
@@ -218,8 +218,8 @@ const VideoPage = () => {
                                     }
                                 </Col>
                             ) : (
-                                <Col lg={9} style={{ marginLeft: '15px' }}>
-                                    <Row style={{ display: 'none' }}>
+                                <Col lg={9} className="videoPlayerCol">
+                                    <Row style={{ display: 'none' }} className="videoPlayerRow">
                                         {mediaType !== '' &&
                                             <Video
                                                 url={videoStream.url}
@@ -233,19 +233,19 @@ const VideoPage = () => {
                                             />
                                         }
                                     </Row>
-                                    <Row style={{ display: 'none' }}>
+                                    <Row style={{ display: 'none', margin: 'auto' }}>
                                         <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
                                             <h4 className="videoTitle">{videoStream.name}</h4>
                                         </Col>
                                     </Row>
-                                    <Row style={{ display: 'none' }}>
+                                    <Row style={{ display: 'none', margin: 'auto' }}>
                                         <div className="d-flex justify-content-start description" style={{ padding: 0 }}>
                                             {videoStream.description}
                                         </div>
                                     </Row>
                                 </Col>
                             )}
-                            <Col>
+                            <Col sm md lg >
                                 <ListGroup className="videoList">
                                     {videoArray.map((item) => (
                                         <VideoButton id={item.id} name={item.name} thumbnail={item.thumbnail} setIde={setIde} />

@@ -11,7 +11,7 @@ const VideoButton = ({ id, name, thumbnail, setIde }) => {
     return (
         <ListGroup.Item className="videoItem" >
             <Card className="videoCard" onClick={changeVideo}>
-                <Card.Img variant="top" src={thumbnail} />
+                <Card.Img variant="top" src={thumbnail} onError={(e) => { e.target.onerror = null; e.target.src = "/media/thumbnails/videoThumbnail.jpg" }} />
                 <Card.Body>
                     <Card.Title className="h6 videoCardTitle" >{name}</Card.Title>
                 </Card.Body>

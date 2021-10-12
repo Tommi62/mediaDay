@@ -52,7 +52,10 @@ const Home = () => {
 
             const streamEndTime = mediaData.media[0].endTime;
             const compareEndTime = moment(streamEndTime, "YYYY-MM-DD HH:mm:ss").diff(now, "seconds");
-            const endTimeWithSafeMargin = compareEndTime + 7200;
+
+            const safeMargin = mediaData.media[0].safetyMarginMinutes * 60;
+            console.log('SAFE', safeMargin);
+            const endTimeWithSafeMargin = compareEndTime + safeMargin;
             console.log('END', endTimeWithSafeMargin);
 
             if (compareStartTime <= 0 && endTimeWithSafeMargin >= 0) {
@@ -163,8 +166,10 @@ const Home = () => {
                                             }
                                         </Col>
                                     ) : (
-                                        <Col className="countdownBg">
-                                            <h4 style={{ color: 'white' }}>Striimi alkaa pian</h4>
+                                        <Col className="countdownContainer">
+                                            <Col className="countdownBg">
+                                                <h4 className="streamStartsSoon">Striimi alkaa pian</h4>
+                                            </Col>
                                         </Col>
                                     )}
                                 </Row>
@@ -190,7 +195,9 @@ const Home = () => {
                                             }
                                         </Col>
                                     ) : (
-                                        <FlipCountdown time={closestTime} />
+                                        <Col className="countdownContainer">
+                                            <FlipCountdown time={closestTime} />
+                                        </Col>
                                     )}
                                 </Row>
                             )}

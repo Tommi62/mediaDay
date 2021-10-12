@@ -73,7 +73,9 @@ const VideoPage = () => {
 
             const streamEndTime = mediaData.media[0].endTime;
             const compareEndTime = moment(streamEndTime, "YYYY-MM-DD HH:mm:ss").diff(now, "seconds");
-            const endTimeWithSafeMargin = compareEndTime + 7200;
+            const safeMargin = mediaData.media[0].safetyMarginMinutes * 60;
+            console.log('SAFE', safeMargin);
+            const endTimeWithSafeMargin = compareEndTime + safeMargin;
             console.log('END', endTimeWithSafeMargin);
 
             if (compareStartTime <= 0 && endTimeWithSafeMargin >= 0) {
@@ -245,7 +247,7 @@ const VideoPage = () => {
                                     </Row>
                                 </Col>
                             )}
-                            <Col sm md lg >
+                            <Col>
                                 <ListGroup className="videoList">
                                     {videoArray.map((item) => (
                                         <VideoButton id={item.id} name={item.name} thumbnail={item.thumbnail} setIde={setIde} />

@@ -62,7 +62,7 @@
 }
 
 .videoHomepage {
-  padding: 2rem 0.8rem;
+  padding: 2rem 0.8rem 0 0.8rem;
 }
 
 .carousel {
@@ -186,13 +186,18 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+.countdownContainer {
+  padding: 0 0.8rem;
+}
+
 .countdownBg {
   background-color: rgb(41, 41, 41);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 2rem 1rem;
+  margin: auto;
+  margin-top: 2rem;
   height: 20rem;
 }
 
@@ -207,6 +212,11 @@
 .flip-countdown-title {
   font-size: medium;
   color: #f2f2f2;
+}
+
+.streamStartsSoon {
+  color: white;
+  margin-bottom: 0;
 }
 
 .socials img {
@@ -359,5 +369,33 @@
   .logoRow img {
     width: 5rem;
     height: 5rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .countdownBg {
+    height: 8rem;
+  }
+
+  .countdownMainText {
+    font-size: smaller;
+    margin: 0 0 0.5rem 0;
+    padding-top: 0;
+  }
+
+  .flip-countdown-title {
+    font-size: 10px!important;
+  }
+
+  .two {
+    font-size: 22px!important;
+  }
+
+  .one {
+    font-size: 22px!important;
+  }
+
+  .streamStartsSoon {
+    font-size: 1rem;
   }
 }

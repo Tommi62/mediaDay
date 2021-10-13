@@ -12,8 +12,8 @@ import eventData from '../data/events.json';
 const VideoPage = () => {
     const [ide, setIde] = useState(0);
     const [videoArray, setVideoArray] = useState([]);
-    const [videoStream, setVideoStream] = useState({});
-    const [eventInfo, setEventInfo] = useState({});
+    const [videoStream, setVideoStream] = useState();
+    const [eventInfo, setEventInfo] = useState();
     const [mediaType, setMediaType] = useState('');
     const [show, setShow] = useState(false);
     const [isStreamLive, setIsStreamLive] = useState(false);
@@ -36,7 +36,6 @@ const VideoPage = () => {
             setVideoStream(eventResult);
             const type = eventResult.type;
             setMediaType(type);
-            console.log(mediaType);
         } catch (e) {
             console.log(e.message);
         }
@@ -52,7 +51,6 @@ const VideoPage = () => {
                 }
             }
             setVideoArray(videoArr);
-            console.log('videoarr', videoArr);
         } catch (e) {
             console.log(e.message);
         }
@@ -74,9 +72,7 @@ const VideoPage = () => {
             const streamEndTime = mediaData.media[0].endTime;
             const compareEndTime = moment(streamEndTime, "YYYY-MM-DD HH:mm:ss").diff(now, "seconds");
             const safeMargin = mediaData.media[0].safetyMarginMinutes * 60;
-            console.log('SAFE', safeMargin);
             const endTimeWithSafeMargin = compareEndTime + safeMargin;
-            console.log('END', endTimeWithSafeMargin);
 
             if (compareStartTime <= 0 && endTimeWithSafeMargin >= 0) {
                 if (compareEndTime <= 0) {
@@ -101,7 +97,6 @@ const VideoPage = () => {
         try {
             if (isItStreamTime) {
                 const interval = setInterval(() => {
-                    console.log('Interval');
                     if (!isItStreamTime) {
                         clearInterval(interval);
                     }
@@ -168,7 +163,7 @@ const VideoPage = () => {
                             }
                         </Col>
                     </Row>
-                    {videoStream !== {} &&
+                    {!!videoStream &&
                         <Row>
                             {show ? (
                                 <Col lg={9} className="videoPlayerCol" >
@@ -189,14 +184,14 @@ const VideoPage = () => {
                                     {mediaType === 'stream' &&
                                         <Row className="videoInfo">
                                             <Row>
-                                                {eventInfo !== {} &&
+                                                {!!eventInfo &&
                                                     <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
                                                         <h4 className="videoTitle">{eventInfo.title}</h4>
                                                     </Col>
                                                 }
                                             </Row>
                                             <Row>
-                                                {eventInfo !== {} &&
+                                                {!!eventInfo &&
                                                     <div className="d-flex justify-content-start description" style={{ padding: 0 }}>
                                                         {eventInfo.speakerDiscription}
                                                     </div>

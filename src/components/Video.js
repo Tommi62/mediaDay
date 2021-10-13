@@ -37,7 +37,6 @@ const Video = ({ url, type, mediaType, setIde, setShow, setIsStreamLive, isItStr
         });
 
         player.on("loadedmetadata", () => {
-            console.log("Metadata loaded", player.duration());
             if (isItStreamTime) {
                 setTriggered(true);
             }
@@ -69,7 +68,6 @@ const Video = ({ url, type, mediaType, setIde, setShow, setIsStreamLive, isItStr
         try {
             if (isItStreamTime) {
                 const timeout = setTimeout(() => {
-                    console.log('VIDEOTIMEOUT');
                     if (mediaType === 'stream') {
                         setTriggered(true);
                     }
@@ -88,7 +86,6 @@ const Video = ({ url, type, mediaType, setIde, setShow, setIsStreamLive, isItStr
     useEffect(() => {
         try {
             if (triggered) {
-                console.log('playeri', videoPlayer.duration());
                 clearTimeout(videoTimeout);
                 if (videoPlayer.duration() !== Infinity && mediaType === 'stream') {
                     if (page === 'VideoPage') {
@@ -125,6 +122,6 @@ const Video = ({ url, type, mediaType, setIde, setShow, setIsStreamLive, isItStr
     );
 };
 
-export default Video;
+export default React.memo(Video);
 
 

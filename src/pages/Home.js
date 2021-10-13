@@ -11,7 +11,7 @@ import Logos from '../components/Logos';
 
 const Home = () => {
     const [ide, setIde] = useState(0);
-    const [videoStream, setVideoStream] = useState({});
+    const [videoStream, setVideoStream] = useState();
     const [closestTime, setClosestTime] = useState('');
     const [mediaType, setMediaType] = useState('');
     const [show, setShow] = useState(false);
@@ -45,7 +45,6 @@ const Home = () => {
             });
 
             const now = moment().format("YYYY-MM-DD HH:mm:ss");
-            console.log('NOW', now);
 
             const streamStartTime = mediaData.media[0].startTime;
             const compareStartTime = moment(streamStartTime, "YYYY-MM-DD HH:mm:ss").diff(now, "seconds");
@@ -54,9 +53,7 @@ const Home = () => {
             const compareEndTime = moment(streamEndTime, "YYYY-MM-DD HH:mm:ss").diff(now, "seconds");
 
             const safeMargin = mediaData.media[0].safetyMarginMinutes * 60;
-            console.log('SAFE', safeMargin);
             const endTimeWithSafeMargin = compareEndTime + safeMargin;
-            console.log('END', endTimeWithSafeMargin);
 
             if (compareStartTime <= 0 && endTimeWithSafeMargin >= 0) {
                 if (compareEndTime <= 0 && !isStreamLive) {
@@ -76,10 +73,7 @@ const Home = () => {
                         return curr;
                     } else return prev;
                 });
-
                 setClosestTime(closest);
-
-                console.log('closest: ' + closest);
             } else {
                 setIsItStreamTime(false);
                 setStreamOver(true);
@@ -94,7 +88,6 @@ const Home = () => {
         try {
             if (startInterval) {
                 const interval = setInterval(() => {
-                    console.log('INTER');
                     const now = moment().format("YYYY-MM-DD HH:mm:ss");
                     const streamStartTime = mediaData.media[0].startTime;
                     const compareStartTime = moment(streamStartTime, "YYYY-MM-DD HH:mm:ss").diff(now, "seconds");
@@ -128,7 +121,7 @@ const Home = () => {
                                                 <Col>
                                                     {mediaType !== '' &&
                                                         <Row className='videoHomepage'>
-                                                            {videoStream !== {} &&
+                                                            {!!videoStream &&
                                                                 <Video
                                                                     url={videoStream.url}
                                                                     type={videoStream.streamVideoType}
@@ -179,7 +172,7 @@ const Home = () => {
                                         <Col >
                                             {mediaType !== '' &&
                                                 <Row className='videoHomepage'>
-                                                    {videoStream !== {} &&
+                                                    {!!videoStream &&
                                                         <Video
                                                             url={videoStream.url}
                                                             type={videoStream.streamVideoType}

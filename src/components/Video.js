@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
 
-const Video = ({ url, type, mediaType, setIde, setShow, setIsStreamLive }) => {
+const Video = ({ url, type, mediaType, setIde, setShow, setIsStreamLive, isItStreamTime, page }) => {
     const videoRef = useRef(null);
     const playerRef = useRef(null);
     const [videoTimeout, setVideoTimeout] = useState();
@@ -38,7 +38,9 @@ const Video = ({ url, type, mediaType, setIde, setShow, setIsStreamLive }) => {
 
         player.on("loadedmetadata", () => {
             console.log("Metadata loaded", player.duration());
-            setTriggered(true);
+            if (isItStreamTime) {
+                setTriggered(true);
+            }
         });
 
     };
@@ -65,14 +67,19 @@ const Video = ({ url, type, mediaType, setIde, setShow, setIsStreamLive }) => {
 
     useEffect(() => {
         try {
-            const timeout = setTimeout(() => {
-                console.log('VIDEOTIMEOUT');
-                if (mediaType === 'stream') {
-                    setTriggered(true);
-                }
-            }, 1500);
-            setVideoTimeout(timeout);
-            return () => clearTimeout(timeout);
+            if (isItStreamTime) {
+                const timeout = setTimeout(() => {
+                    console.log('VIDEOTIMEOUT');
+                    if (mediaType === 'stream') {
+                        setTriggered(true);
+                    }
+                }, 1500);
+                setVideoTimeout(timeout);
+                return () => clearTimeout(timeout);
+            } else {
+                setIde(1);
+                setShow(true);
+            }
         } catch (e) {
             console.log(e.message);
         }
@@ -84,7 +91,10 @@ const Video = ({ url, type, mediaType, setIde, setShow, setIsStreamLive }) => {
                 console.log('playeri', videoPlayer.duration());
                 clearTimeout(videoTimeout);
                 if (videoPlayer.duration() !== Infinity && mediaType === 'stream') {
-                    setIde(1);
+                    if (page === 'VideoPage') {
+                        setIde(1);
+                    }
+                    setIsStreamLive(false);
                     console.log('Not live');
                 } else {
                     setIsStreamLive(true);

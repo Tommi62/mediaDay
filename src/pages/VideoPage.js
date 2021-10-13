@@ -250,7 +250,7 @@ const VideoPage = () => {
                             <Col>
                                 <ListGroup className="videoList">
                                     {videoArray.map((item) => (
-                                        <VideoButton id={item.id} name={item.name} thumbnail={item.thumbnail} setIde={setIde} />
+                                        <VideoButton id={item.id} name={item.name} type={item.type} thumbnail={item.thumbnail} setIde={setIde} />
                                     ))}{' '}
                                 </ListGroup>
                             </Col>

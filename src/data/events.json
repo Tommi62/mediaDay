@@ -3,41 +3,41 @@
     {
       "videoUrl": "Sami_Marttinen",
       "title": "Käyttäjäkokemuksen merkitys IT-järjestelmissä",
-      "startTime": "16:07",
+      "startTime": "11:00",
       "speakerName": "Sami Marttinen",
       "speakerCompany": "SWAPPIE",
       "speakerImage": "/media/speakers/sami_marttinen.jpg",
       "speakerDiscription": "Sami Marttinen esittelee Swappien tarinan, ja teknologian merkityksen yrityksen nousun taustalla. Puheenvuoro esitetään suomeksi.",
-      "endTime": "16:09",
-      "startDate": "13.10.2021",
-      "streamUrl": "http://195.148.104.124:1935/jakelu/1/playlist.m3u8",
-      "streamVideoType": "application/x-mpegurl"
+      "endTime": "11:50",
+      "startDate": "01.04.2022",
+      "streamUrl": "https://storage.coverr.co/videos/8sX3X01K5mKzDWcPFPgzQPepc3ho2KbEs?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjM0MTI4MDM1fQ.F1vF7UXJZVwj8jJx4jblDrbw89gsZdfoylP3_RfcxJ8",
+      "streamVideoType": "video/webm"
     },
     {
       "videoUrl": "Frans_Tihveräinen",
       "title": "Yrittäjyys korkean teknologian alalla",
-      "startTime": "16:10",
+      "startTime": "12:00",
       "speakerName": "Frans Tihveräinen",
       "speakerCompany": "FLYAR",
       "speakerImage": "/media/speakers/frans_tihverainen.jpg",
       "speakerDiscription": "Erilainen urapolku - Frans Tihveräinen: Suoraan koulun penkiltä pitkän linjan AR-ammattilaiseksi. Frans kertoo omasta nousustaan AR-ammattilaiseksi, ja esittelee omat vinkkinsä yrittäjyydestä haaveileville opiskelijoille. Puheenvuoro esitetään suomeksi.",
-      "endTime": "16:12",
-      "startDate": "13.10.2021",
-      "streamUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Wikipedia_Edit_2014.webm",
+      "endTime": "13:15",
+      "startDate": "01.04.2022",
+      "streamUrl": "https://storage.coverr.co/videos/RV02Ic3z3TmKhIb01bZoGUcjiiDHZ71w02O?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjM0MTI0NDE0fQ.81c-AFuL2QZFnVNRDXvnTzK5kZgO3k46cPY12Ygss_k",
       "streamVideoType": "video/webm"
     },
     {
       "videoUrl": "Mikko_Kodisoja",
       "title": "Tulevaisuuden ratkaisut elokuvatuotannossa",
-      "startTime": "16:22",
+      "startTime": "10:00",
       "speakerName": "Mikko Kodisoja",
       "speakerCompany": "FIREFRAME",
       "speakerImage": "/media/speakers/mikko_kodisoja.jpg",
       "speakerDiscription": "Yrityksen perustaja Mikko Kodisoja kertoo, miksi vaihtoi peliteollisuuden elokuvamaailmaan. Kuumana puheenaiheena Suomen ensimmäinen Hollywood-tason ledseinä-studio. Puheenvuoro esitetään englanniksi.",
-      "endTime": "16:23",
-      "startDate": "13.10.2021",
-      "streamUrl": "rtmp://195.148.104.124:1935/jakelu/1/playlist.m3u8",
-      "streamVideoType": "application/x-mpegurl"
+      "endTime": "10:55",
+      "startDate": "01.04.2022",
+      "streamUrl": "https://storage.coverr.co/videos/01Co2jZZXkTavF2dFIGRhaZhT157mUrLv?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjM0MTI3NzYzfQ.wOqqOGfir2zxGwEjLMH5z7GQOMgeNdBPoErkBT6pntg",
+      "streamVideoType": "video/webm"
     },
     {
       "videoUrl": "Ulrich_Mors",
@@ -49,8 +49,8 @@
       "speakerDiscription": "Ulrich Mors esittelee Sonyn uusimmat videokamerauutuudet ammattimaisten videotuotantojen käyttöön. Näkökulmana kameroiden käyttö eurooppalaisessa indie-elokuvatuotannossa, josta Ulrichilla on itsessään paljon kokemusta. Puheenvuoro esitetään englanniksi.",
       "endTime": "14:55",
       "startDate": "01.04.2022",
-      "streamUrl": "rtmp://195.148.104.124:1935/jakelu/1/playlist.m3u8",
-      "streamVideoType": "application/x-mpegurl"
+      "streamUrl": "https://storage.coverr.co/videos/idtkgT9GQRkdBtcdk02QiBmCNB4UbXERo?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjM0MTIzNTY5fQ.cHpCQATLcI0WXz1e8RyhUmfIExfCP7gzETNM4Esnpuk",
+      "streamVideoType": "video/webm"
     }
   ],
   "placeholder": [

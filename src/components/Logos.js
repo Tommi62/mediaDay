@@ -16,11 +16,11 @@ const Logos = () => {
         <>
             <Image src={avita} fluid />
             <Image src={crestron} fluid />
-            <Image src={fireframe} fluid />
+            <Image src={panasonic} fluid />
             <Image src={flyAR} fluid />
             <Image src={foodandco} fluid />
             <Image src={metropolia} fluid />
-            <Image src={panasonic} fluid />
+            <Image src={fireframe} fluid />
             <Image src={sony} fluid />
             <Image src={swappie} fluid />
             <Image src={trail} fluid />

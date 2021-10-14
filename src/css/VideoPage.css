@@ -1,101 +1,121 @@
-
 .videoItem {
-    margin: 0;
-    border: none; 
-    padding: 0 1rem;
+  margin: 0;
+  border: none;
+  padding: 0 1rem;
 }
 
 .videoCard:hover {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 .videoCard {
-    border: none;
-    cursor: pointer;
-    margin: 0 0.3rem 0.3rem 0.3rem;
+  border: none;
+  cursor: pointer;
+  margin: 0 0.3rem 0.3rem 0.3rem;
 }
 
 .card-body {
-    padding: 0.3rem;
+  padding: 0.3rem;
 }
 
 .videoList {
-    overflow-y: auto;
-    max-height: 80vh;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.videoList::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+.videoList::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+.videoList::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 10px;
+  background-image: rgba(0, 0, 0, 0.2) 25%, transparent 25%, transparent 50%;
 }
 
 .description {
-    text-align: start;
+  text-align: start;
 }
 
 .videoTitle {
-    margin: 0.3rem 0;
+  margin: 0.3rem 0;
 }
 
 .videoCardTitle {
-    max-width: 10vw;
+  max-width: 10vw;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.videoPageTitle {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.videoPlayerRow {
+  margin: auto;
+}
+
+.videoInfo {
+  margin: auto;
+}
+
+@media only screen and (max-width: 992px) {
+  .videoCard {
+    max-width: 70%;
+    margin: auto;
+  }
+
+  .videoInfo {
+    margin-bottom: 4rem;
+  }
+
+  .videoList {
+    margin-top: 1rem;
+    max-height: 50vh;
+  }
+
+  .videoCardTitle {
+    max-width: 100%;
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-
-.videoPageTitle {
-    text-align: center;
-}
-
-.videoPlayerRow {
-    margin: auto;
-}
-
-.videoInfo {
-    margin: auto;
-}
-
-@media only screen and (max-width: 992px) {
-    .videoCard {
-        max-width: 70%;
-        margin: auto;
-    }
-
-    .videoList {
-        margin-top: 1rem;
-        max-height: 50vh;
-    }
-
-    .videoCardTitle {
-        max-width: 100%;
-        display: inline-block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .videoPageTitle {
-        font-size: 1.5rem;
-        margin-top: 0.3rem;
-    }
+  .videoPageTitle {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
 
-    .videoPlayerCol {
-        width: 95%;
-        margin: auto;
-    }
+  .videoPlayerCol {
+    width: 95%;
+    margin: auto;
+  }
 
-    .videoPlayerRow {
-        margin: auto;
-    }
+  .videoPlayerRow {
+    margin: auto;
+  }
 
-    .videoTitle {
-        font-size: 0.9rem;
-    }
+  .videoTitle {
+    font-size: 0.9rem;
+  }
 
-    .description {
-        font-size: 0.7rem;
-    }
+  .description {
+    font-size: 0.7rem;
+  }
 
-    .videoCardTitle {
-        font-size: 0.8rem;
-    }
+  .videoCardTitle {
+    font-size: 0.8rem;
+  }
 }

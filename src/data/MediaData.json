@@ -5,8 +5,8 @@
       "type": "stream",
       "name": "Media Day 2022 -striimi (Live)",
       "description": "Tähän tulis sit sen striimin kuvaus.",
-      "startTime": "2021-10-12 16:07:00",
-      "endTime": "2021-10-15 17:47:00",
+      "startTime": "2021-10-14 15:55:00",
+      "endTime": "2021-10-14 16:45:00",
       "safetyMarginMinutes": 120,
       "url": "http://195.148.104.124:1935/jakelu/tommi/playlist.m3u8",
       "streamVideoType": "application/x-mpegurl",
@@ -17,8 +17,7 @@
       "type": "video",
       "name": "Media Day 2022 -promovideo",
       "description": "Media Day 2022 on pian täällä! Virittäydy tunnelmaan katsomalla tämä video.",
-      "startTime": "2021-10-21 02:20:58",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Wikipedia_Edit_2014.webm",
+      "url": "/media/videos/Vintage_Computer__Space_Invaders_SEQ.mp4",
       "streamVideoType": "video/mp4",
       "thumbnail": ""
     },
@@ -27,8 +26,7 @@
       "type": "video",
       "name": "Media Day 2016 aamupäivän tunnelmia",
       "description": "Videomateriaalia edellisestä järjestetystä Media Day tapahtumasta.",
-      "startTime": "2021-11-15 02:20:58",
-      "url": "//vjs.zencdn.net/v/oceans.mp4",
+      "url": "/media/videos/video.mp4",
       "streamVideoType": "video/mp4",
       "thumbnail": ""
     },
@@ -37,8 +35,7 @@
       "type": "video",
       "name": "Media Day 2016 iltapäivän tunnelmia",
       "description": "Videomateriaalia edellisestä järjestetystä Media Day tapahtumasta.",
-      "startTime": "2021-10-04 15:00:00",
-      "url": "https://youtu.be/QHvON63FVDg",
+      "url": "/media/videos/Metal_Wind_Chimes_at_Sunset.mp4",
       "streamVideoType": "video/mp4",
       "thumbnail": ""
     },
@@ -47,8 +44,7 @@
       "type": "video",
       "name": "Media Day 2016 yhteenveto",
       "description": "Media Day 2016 on onnistuneesti ohi! Kiitos kaikille osallistujille!",
-      "startTime": "2021-10-11 02:20:58",
-      "url": "https://youtu.be/QHvON63FVDg",
+      "url": "/media/videos/Piano_Playing_Close.mp4",
       "streamVideoType": "video/mp4",
       "thumbnail": ""
     }

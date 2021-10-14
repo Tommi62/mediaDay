@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {Col, Row, Container} from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Col, Row, Container } from 'react-bootstrap';
 import Speaker from '../components/Speaker';
 import texts from '../data/texts.json';
 import TextCarousel from './../components/TextCarousel';
@@ -20,10 +20,11 @@ const Home = () => {
     const [streamOver, setStreamOver] = useState(false);
     const [isCountdownOver, setIsCountdownOver] = useState(false);
     const [startInterval, setStartInterval] = useState(false);
+    const [streamPlaceholderText, setStreamPlaceholderText] = useState('');
 
     useEffect(() => {
         try {
-            const eventResult = mediaData.media.find(({id}) =>
+            const eventResult = mediaData.media.find(({ id }) =>
                 id === ide
             );
 
@@ -62,6 +63,11 @@ const Home = () => {
                     setIde(1);
                 } else {
                     setIsItStreamTime(true);
+                    if (compareEndTime > 0) {
+                        setStreamPlaceholderText('Striimi alkaa pian');
+                    } else {
+                        setStreamPlaceholderText('Striimi on päättynyt');
+                    }
                 }
             } else if (compareStartTime > 0) {
                 setStartInterval(true);
@@ -140,27 +146,34 @@ const Home = () => {
                                                     }
                                                 </Col>
                                             ) : (
-                                                <Col style={{display: 'none'}}>
-                                                    {mediaType !== '' &&
-                                                        <Row className='videoHomepage'>
-                                                            {videoStream !== {} &&
-                                                                <>
-                                                                    <h2 className="videoHeader">Video tapahtumasta</h2>
-                                                                    <Video
-                                                                        url={videoStream.url}
-                                                                        type={videoStream.streamVideoType}
-                                                                        mediaType={mediaType}
-                                                                        setIde={setIde}
-                                                                        setShow={setShow}
-                                                                        setIsStreamLive={setIsStreamLive}
-                                                                        isItStreamTime={isItStreamTime}
-                                                                        page={'Home'}
-                                                                    />
-                                                                </>
-                                                            }
-                                                        </Row>
-                                                    }
-                                                </Col>
+                                                <Row>
+                                                    <Col style={{ display: 'none' }}>
+                                                        {mediaType !== '' &&
+                                                            <Row className='videoHomepage'>
+                                                                {!!videoStream &&
+                                                                    <>
+                                                                        <h2 className="videoHeader">Video tapahtumasta</h2>
+                                                                        <Video
+                                                                            url={videoStream.url}
+                                                                            type={videoStream.streamVideoType}
+                                                                            mediaType={mediaType}
+                                                                            setIde={setIde}
+                                                                            setShow={setShow}
+                                                                            setIsStreamLive={setIsStreamLive}
+                                                                            isItStreamTime={isItStreamTime}
+                                                                            page={'Home'}
+                                                                        />
+                                                                    </>
+                                                                }
+                                                            </Row>
+                                                        }
+                                                    </Col>
+                                                    <Col className="countdownContainer">
+                                                        <Col className="countdownBg">
+                                                            <h4 className="streamStartsSoon">{streamPlaceholderText}</h4>
+                                                        </Col>
+                                                    </Col>
+                                                </Row>
                                             )
                                             }
                                         </Col>
@@ -168,7 +181,7 @@ const Home = () => {
                                         <>
                                             <Col className="countdownContainer">
                                                 <Col className="countdownBg">
-                                                    <h4 className="streamStartsSoon">Striimi alkaa pian</h4>
+                                                    <h4 className="streamStartsSoon">{streamPlaceholderText}</h4>
                                                 </Col>
                                             </Col>
                                         </>

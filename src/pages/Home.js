@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Col, Row, Container } from 'react-bootstrap';
+import React, {useEffect, useState} from 'react';
+import {Col, Row, Container} from 'react-bootstrap';
 import Speaker from '../components/Speaker';
 import texts from '../data/texts.json';
 import TextCarousel from './../components/TextCarousel';
@@ -24,7 +24,7 @@ const Home = () => {
 
     useEffect(() => {
         try {
-            const eventResult = mediaData.media.find(({ id }) =>
+            const eventResult = mediaData.media.find(({id}) =>
                 id === ide
             );
 
@@ -147,7 +147,7 @@ const Home = () => {
                                                 </Col>
                                             ) : (
                                                 <Row>
-                                                    <Col style={{ display: 'none' }}>
+                                                    <Col style={{display: 'none'}}>
                                                         {mediaType !== '' &&
                                                             <Row className='videoHomepage'>
                                                                 {!!videoStream &&

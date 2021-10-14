@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
 
-const Video = ({ url, type, mediaType, setIde, setShow, setIsStreamLive, isItStreamTime, page }) => {
+const Video = ({url, type, mediaType, setIde, setShow, setIsStreamLive, isItStreamTime, page}) => {
     const videoRef = useRef(null);
     const playerRef = useRef(null);
     const [videoTimeout, setVideoTimeout] = useState();
@@ -29,11 +29,9 @@ const Video = ({ url, type, mediaType, setIde, setShow, setIsStreamLive, isItStr
 
         // you can handle player events here
         player.on("waiting", () => {
-            console.log("player is waiting");
         });
 
         player.on("dispose", () => {
-            console.log("player will dispose");
         });
 
         player.on("loadedmetadata", () => {
@@ -51,7 +49,6 @@ const Video = ({ url, type, mediaType, setIde, setShow, setIsStreamLive, isItStr
             if (!videoElement) return;
 
             const player = (playerRef.current = videojs(videoElement, options, () => {
-                console.log("player is ready");
                 onReady && onReady(player);
                 setVideoPlayer(player);
             }));
@@ -92,7 +89,6 @@ const Video = ({ url, type, mediaType, setIde, setShow, setIsStreamLive, isItStr
                         setIde(1);
                     }
                     setIsStreamLive(false);
-                    console.log('Not live');
                 } else {
                     setIsStreamLive(true);
                 }

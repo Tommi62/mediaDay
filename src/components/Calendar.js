@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import FullCalendar from '@fullcalendar/react'; // must go before plugins
+import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction'; // needed for dayClick
+import interactionPlugin from '@fullcalendar/interaction';
 
 import eventData from '../data/events.json';
 import fiLocale from '@fullcalendar/core/locales/fi';
@@ -49,6 +49,7 @@ const Calendar = () => {
       slotMinTime='08:00:00'
       slotMaxTime='17:00:00'
       height={480}
+      eventColor='#ff0000'
       views={{
         timeGrid: {
           visibleRange: {

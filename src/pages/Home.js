@@ -128,26 +128,8 @@ const Home = () => {
                                                     {mediaType !== '' &&
                                                         <Row className='videoHomepage'>
                                                             {!!videoStream &&
-                                                                <Video
-                                                                    url={videoStream.url}
-                                                                    type={videoStream.streamVideoType}
-                                                                    mediaType={mediaType}
-                                                                    setIde={setIde}
-                                                                    setShow={setShow}
-                                                                    setIsStreamLive={setIsStreamLive}
-                                                                    isItStreamTime={isItStreamTime}
-                                                                    page={'Home'}
-                                                                />
-                                                            }
-                                                        </Row>
-                                                    }
-                                                </Col>
-                                            ) : (
-                                                <Row>
-                                                    <Col style={{ display: 'none' }}>
-                                                        {mediaType !== '' &&
-                                                            <Row className='videoHomepage'>
-                                                                {!!videoStream &&
+                                                                <>
+                                                                    <h2 className="videoHeader">Live stream</h2>
                                                                     <Video
                                                                         url={videoStream.url}
                                                                         type={videoStream.streamVideoType}
@@ -158,6 +140,30 @@ const Home = () => {
                                                                         isItStreamTime={isItStreamTime}
                                                                         page={'Home'}
                                                                     />
+                                                                </>
+                                                            }
+                                                        </Row>
+                                                    }
+                                                </Col>
+                                            ) : (
+                                                <Row>
+                                                    <Col style={{ display: 'none' }}>
+                                                        {mediaType !== '' &&
+                                                            <Row className='videoHomepage'>
+                                                                {!!videoStream &&
+                                                                    <>
+                                                                        <h2 className="videoHeader">Video tapahtumasta</h2>
+                                                                        <Video
+                                                                            url={videoStream.url}
+                                                                            type={videoStream.streamVideoType}
+                                                                            mediaType={mediaType}
+                                                                            setIde={setIde}
+                                                                            setShow={setShow}
+                                                                            setIsStreamLive={setIsStreamLive}
+                                                                            isItStreamTime={isItStreamTime}
+                                                                            page={'Home'}
+                                                                        />
+                                                                    </>
                                                                 }
                                                             </Row>
                                                         }
@@ -172,11 +178,13 @@ const Home = () => {
                                             }
                                         </Col>
                                     ) : (
-                                        <Col className="countdownContainer">
-                                            <Col className="countdownBg">
-                                                <h4 className="streamStartsSoon">Striimi alkaa pian</h4>
+                                        <>
+                                            <Col className="countdownContainer">
+                                                <Col className="countdownBg">
+                                                    <h4 className="streamStartsSoon">{streamPlaceholderText}</h4>
+                                                </Col>
                                             </Col>
-                                        </Col>
+                                        </>
                                     )}
                                 </Row>
                             ) : (
@@ -186,38 +194,44 @@ const Home = () => {
                                             {mediaType !== '' &&
                                                 <Row className='videoHomepage'>
                                                     {!!videoStream &&
-                                                        <Video
-                                                            url={videoStream.url}
-                                                            type={videoStream.streamVideoType}
-                                                            mediaType={mediaType}
-                                                            setIde={setIde}
-                                                            setShow={setShow}
-                                                            setIsStreamLive={setIsStreamLive}
-                                                            isItStreamTime={isItStreamTime}
-                                                            page={'Home'}
-                                                        />
+                                                        <>
+                                                            <h2 className="videoHeader">Mediadayn tunnelmia</h2>
+                                                            <Video
+                                                                url={videoStream.url}
+                                                                type={videoStream.streamVideoType}
+                                                                mediaType={mediaType}
+                                                                setIde={setIde}
+                                                                setShow={setShow}
+                                                                setIsStreamLive={setIsStreamLive}
+                                                                isItStreamTime={isItStreamTime}
+                                                                page={'Home'}
+                                                            />
+                                                        </>
                                                     }
                                                 </Row>
                                             }
                                         </Col>
                                     ) : (
-                                        <Col className="countdownContainer">
-                                            <FlipCountdown time={closestTime} />
-                                        </Col>
+                                        <>
+                                            <Col className="countdownContainer">
+                                                <FlipCountdown time={closestTime} />
+                                            </Col>
+                                        </>
                                     )}
                                 </Row>
                             )}
                             <Row>
                                 <TextCarousel className='carousel' textArray={texts}></TextCarousel>
                             </Row>
-                            <Row className='logoRow'>
+                            <Row className='sponsorLogos'>
+                                <h2>Sponsorit</h2>
                                 <Logos />
                             </Row>
                         </Container>
                     </Col>
                     <Col lg={12} xl={5} xxl={6}>
                         <Container fluid>
-                            {/* <h1>Puhujat</h1> */}
+                            <h2 className='speakerHeader'>Puhujat</h2>
                             {texts.speakers.map((speaker) => {
                                 return <Speaker speaker={speaker} />
                             })}

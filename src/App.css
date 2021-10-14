@@ -66,7 +66,7 @@
 }
 
 .carousel {
-  margin: 2rem 0;
+  margin: 6rem 0;
 }
 
 .carousel-caption {
@@ -76,6 +76,22 @@
   top: 50%;
   transform: translate(0, -50%);
   height: fit-content;
+}
+
+.carousel-item img {
+  filter: brightness(0.8);
+}
+
+.speakerHeader {
+  margin: 2rem 0 0 0;
+  text-align: center;
+  font-size: xx-large;
+  background-color: #666666;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(255, 255, 255, 0.5) 0px 3px 3px;
 }
 
 .speakerImage {
@@ -145,7 +161,23 @@
   padding: 6rem 2rem;
 }
 
-.logoRow img {
+.sponsorLogos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsorLogos h2 {
+  text-align: center;
+  background-color: #666666;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(255, 255, 255, 0.5) 0px 3px 3px;
+}
+
+.sponsorLogos img {
   width: 10rem;
   height: 10rem;
 }
@@ -224,6 +256,18 @@
   height: 3rem;
 }
 
+.videoHeader {
+  margin: 0 0 2rem 0;
+  text-align: center;
+  font-size: xx-large;
+  background-color: #666666;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgb(255 255 255 / 50%) 0px 3px 3px;
+}
+
 .footer {
   background-color: #f2f2f2;
   clear: both;
@@ -233,6 +277,10 @@
 
 .footerTextBlock {
   padding: 3rem;
+}
+
+.footerText:first-of-type {
+  font-size: large;
 }
 
 .footerText {
@@ -323,6 +371,23 @@
   letter-spacing: 0.6rem;
 }
 
+@media only screen and (max-width: 700px) {
+  .logo {
+    font-size: 3rem;
+  }
+  .sponsorLogos {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .sponsorLogos img {
+    width: 6rem;
+    height: 6rem;
+  }
+  .carousel {
+    margin: 3rem 0;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .speakerRow {
     margin: 1rem 0;
@@ -370,6 +435,9 @@
     width: 5rem;
     height: 5rem;
   }
+  .carousel-indicators {
+    visibility: hidden;
+  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -384,15 +452,15 @@
   }
 
   .flip-countdown-title {
-    font-size: 10px!important;
+    font-size: 10px !important;
   }
 
   .two {
-    font-size: 22px!important;
+    font-size: 22px !important;
   }
 
   .one {
-    font-size: 22px!important;
+    font-size: 22px !important;
   }
 
   .streamStartsSoon {

@@ -7,7 +7,7 @@ const Speaker = ({speaker}) => {
     <Row className=" justify-content-md-center">
       <Row className="speakerRow card4">
         <Col md={4} xs={12} xl={12} xxl={4} className="alignCenter">
-          <Image className="speakerImage card2" src={speaker.imageUrl} fluid roundedCircle />
+          <Image className="speakerImage" src={speaker.imageUrl} fluid roundedCircle />
         </Col>
         <Col md={8} xs={12} xl={12} xxl={8} >
           <h3 className='speakerName'>{speaker.name}</h3>

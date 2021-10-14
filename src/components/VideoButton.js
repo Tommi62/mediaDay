@@ -1,9 +1,9 @@
 import '../css/VideoPage.css'
 
-import { Card, ListGroup } from "react-bootstrap";
-import { useEffect, useState } from 'react';
+import {Card, ListGroup} from "react-bootstrap";
+import {useEffect, useState} from 'react';
 
-const VideoButton = ({ id, name, type, thumbnail, setIde }) => {
+const VideoButton = ({id, name, type, thumbnail, setIde}) => {
     const [isItStream, setIsItStream] = useState(true);
     const [streamImgUrl, setStreamImgUrl] = useState("/media/thumbnails/streamThumbnail.jpg");
 
@@ -31,14 +31,14 @@ const VideoButton = ({ id, name, type, thumbnail, setIde }) => {
         <ListGroup.Item className="videoItem" >
             {isItStream ? (
                 <Card className="videoCard" onClick={changeVideo}>
-                    <Card.Img variant="top" src={streamImgUrl} onError={(e) => { e.target.onerror = null; e.target.src = "/media/thumbnails/streamThumbnail.jpg" }} />
+                    <Card.Img variant="top" src={streamImgUrl} onError={(e) => {e.target.onerror = null; e.target.src = "/media/thumbnails/streamThumbnail.jpg"}} />
                     <Card.Body>
                         <Card.Title className="h6 videoCardTitle" >{name}</Card.Title>
                     </Card.Body>
                 </Card>
             ) : (
                 <Card className="videoCard" onClick={changeVideo}>
-                    <Card.Img variant="top" src={thumbnail} onError={(e) => { e.target.onerror = null; e.target.src = "/media/thumbnails/videoThumbnail.jpg" }} />
+                    <Card.Img variant="top" src={thumbnail} onError={(e) => {e.target.onerror = null; e.target.src = "/media/thumbnails/videoThumbnail.jpg"}} />
                     <Card.Body>
                         <Card.Title className="h6 videoCardTitle" >{name}</Card.Title>
                     </Card.Body>

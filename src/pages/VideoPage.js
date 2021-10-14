@@ -1,7 +1,7 @@
 import '../css/VideoPage.css'
 
-import React, { useEffect, useState } from 'react';
-import { Col, Container, ListGroup, Row } from 'react-bootstrap';
+import React, {useEffect, useState} from 'react';
+import {Col, Container, ListGroup, Row} from 'react-bootstrap';
 import moment from 'moment';
 import Video from '../components/Video';
 import VideoButton from '../components/VideoButton';
@@ -26,7 +26,7 @@ const VideoPage = () => {
 
     useEffect(() => {
         try {
-            const eventResult = mediaData.media.find(({ id }) =>
+            const eventResult = mediaData.media.find(({id}) =>
                 id === ide
             );
 
@@ -185,14 +185,14 @@ const VideoPage = () => {
                                         <Row className="videoInfo">
                                             <Row>
                                                 {!!eventInfo &&
-                                                    <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
+                                                    <Col className="d-flex justify-content-start" style={{padding: 0}}>
                                                         <h4 className="videoTitle">{eventInfo.title}</h4>
                                                     </Col>
                                                 }
                                             </Row>
                                             <Row>
                                                 {!!eventInfo &&
-                                                    <div className="d-flex justify-content-start description" style={{ padding: 0 }}>
+                                                    <div className="d-flex justify-content-start description" style={{padding: 0}}>
                                                         {eventInfo.speakerDiscription}
                                                     </div>
                                                 }
@@ -202,12 +202,12 @@ const VideoPage = () => {
                                     {mediaType === 'video' &&
                                         <Row className="videoInfo">
                                             <Row>
-                                                <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
+                                                <Col className="d-flex justify-content-start" style={{padding: 0}}>
                                                     <h4 className="videoTitle">{videoStream.name}</h4>
                                                 </Col>
                                             </Row>
                                             <Row>
-                                                <div className="d-flex justify-content-start description" style={{ padding: 0 }}>
+                                                <div className="d-flex justify-content-start description" style={{padding: 0}}>
                                                     {videoStream.description}
                                                 </div>
                                             </Row>
@@ -216,7 +216,7 @@ const VideoPage = () => {
                                 </Col>
                             ) : (
                                 <Col lg={9} className="videoPlayerCol">
-                                    <Row style={{ display: 'none' }} className="videoPlayerRow">
+                                    <Row style={{display: 'none'}} className="videoPlayerRow">
                                         {mediaType !== '' &&
                                             <Video
                                                 url={videoStream.url}
@@ -230,13 +230,13 @@ const VideoPage = () => {
                                             />
                                         }
                                     </Row>
-                                    <Row style={{ display: 'none', margin: 'auto' }}>
-                                        <Col className="d-flex justify-content-start" style={{ padding: 0 }}>
+                                    <Row style={{display: 'none', margin: 'auto'}}>
+                                        <Col className="d-flex justify-content-start" style={{padding: 0}}>
                                             <h4 className="videoTitle">{videoStream.name}</h4>
                                         </Col>
                                     </Row>
-                                    <Row style={{ display: 'none', margin: 'auto' }}>
-                                        <div className="d-flex justify-content-start description" style={{ padding: 0 }}>
+                                    <Row style={{display: 'none', margin: 'auto'}}>
+                                        <div className="d-flex justify-content-start description" style={{padding: 0}}>
                                             {videoStream.description}
                                         </div>
                                     </Row>

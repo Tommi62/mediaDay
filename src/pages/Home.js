@@ -20,6 +20,7 @@ const Home = () => {
     const [streamOver, setStreamOver] = useState(false);
     const [isCountdownOver, setIsCountdownOver] = useState(false);
     const [startInterval, setStartInterval] = useState(false);
+    const [streamPlaceholderText, setStreamPlaceholderText] = useState('');
 
     useEffect(() => {
         try {
@@ -62,6 +63,11 @@ const Home = () => {
                     setIde(1);
                 } else {
                     setIsItStreamTime(true);
+                    if (compareEndTime > 0) {
+                        setStreamPlaceholderText('Striimi alkaa pian');
+                    } else {
+                        setStreamPlaceholderText('Striimi on päättynyt');
+                    }
                 }
             } else if (compareStartTime > 0) {
                 setStartInterval(true);
@@ -141,7 +147,7 @@ const Home = () => {
                                                     <Col style={{ display: 'none' }}>
                                                         {mediaType !== '' &&
                                                             <Row className='videoHomepage'>
-                                                                {videoStream !== {} &&
+                                                                {!!videoStream &&
                                                                     <Video
                                                                         url={videoStream.url}
                                                                         type={videoStream.streamVideoType}
@@ -158,7 +164,7 @@ const Home = () => {
                                                     </Col>
                                                     <Col className="countdownContainer">
                                                         <Col className="countdownBg">
-                                                            <h4 className="streamStartsSoon">Striimi alkaa pian</h4>
+                                                            <h4 className="streamStartsSoon">{streamPlaceholderText}</h4>
                                                         </Col>
                                                     </Col>
                                                 </Row>

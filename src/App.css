@@ -149,6 +149,7 @@
   z-index: -20;
   text-align: center;
   width: 100%;
+  top: 0;
 }
 
 .alignCenter {

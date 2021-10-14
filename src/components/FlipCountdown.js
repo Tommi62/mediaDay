@@ -1,14 +1,14 @@
 import React from 'react';
 import Countdown from '@rumess/react-flip-countdown';
-import {Row} from 'react-bootstrap';
-import {useMediaQuery} from 'react-responsive';
+import { Row } from 'react-bootstrap';
+import { useMediaQuery } from 'react-responsive';
 
 
 
 
 
-const FlipCountdown = ({time}) => {
-    const isMobile = useMediaQuery({query: `(max-width: 760px)`});
+const FlipCountdown = ({ time }) => {
+    const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
     return (
         (isMobile) ? (

@@ -40,7 +40,7 @@ const Calendar = () => {
     <FullCalendar
       locales={[fiLocale]}
       locale='fi'
-      dayHeaderContent={false} //{false} poistais koko osion
+      dayHeaderContent={false}
       plugins={[timeGridPlugin, interactionPlugin]}
       initialView='timeGrid'
       headerToolbar={false}

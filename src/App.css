@@ -1,6 +1,6 @@
 .App {
   text-align: left;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .body {
@@ -9,7 +9,7 @@
 }
 
 .logo {
-  font-family: "Monoton", sans-serif;
+  font-family: 'Monoton', sans-serif;
   font-size: 6rem;
   text-transform: uppercase;
   margin: auto;
@@ -123,7 +123,7 @@
   background-attachment: fixed;
   background-position: 50% top;
   background-size: cover;
-  background-image: url("pngegg.png");
+  background-image: url('pngegg.png');
   background-color: white;
 }
 
@@ -151,7 +151,7 @@
 }
 
 .section:before {
-  content: "";
+  content: '';
   display: inline-block;
   height: 100%;
   width: 0px;
@@ -248,7 +248,7 @@
   display: flex;
   flex-direction: column;
   text-align: left;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   letter-spacing: 3px;
 }
@@ -315,7 +315,7 @@
 
 .scheduleHeader {
   padding-top: 3rem;
-  font-family: "Monoton", sans-serif;
+  font-family: 'Monoton', sans-serif;
   font-size: 4rem;
   text-transform: uppercase;
   text-align: center;
@@ -323,7 +323,7 @@
   letter-spacing: 0.6rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .speakerRow {
     margin: 1rem 0;
     padding: 2rem 2rem;
@@ -337,8 +337,8 @@
   }
   .logo {
     text-align: center;
-    font-family: "Monoton", sans-serif;
-    font-size: 1.5rem;
+    font-family: 'Monoton', sans-serif;
+    font-size: 2.5rem;
     text-transform: uppercase;
     margin: auto;
     width: fit-content;
@@ -372,7 +372,7 @@
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .countdownBg {
     height: 8rem;
   }
@@ -384,15 +384,15 @@
   }
 
   .flip-countdown-title {
-    font-size: 10px!important;
+    font-size: 10px !important;
   }
 
   .two {
-    font-size: 22px!important;
+    font-size: 22px !important;
   }
 
   .one {
-    font-size: 22px!important;
+    font-size: 22px !important;
   }
 
   .streamStartsSoon {

@@ -137,24 +137,31 @@ const Home = () => {
                                                     }
                                                 </Col>
                                             ) : (
-                                                <Col style={{ display: 'none' }}>
-                                                    {mediaType !== '' &&
-                                                        <Row className='videoHomepage'>
-                                                            {videoStream !== {} &&
-                                                                <Video
-                                                                    url={videoStream.url}
-                                                                    type={videoStream.streamVideoType}
-                                                                    mediaType={mediaType}
-                                                                    setIde={setIde}
-                                                                    setShow={setShow}
-                                                                    setIsStreamLive={setIsStreamLive}
-                                                                    isItStreamTime={isItStreamTime}
-                                                                    page={'Home'}
-                                                                />
-                                                            }
-                                                        </Row>
-                                                    }
-                                                </Col>
+                                                <Row>
+                                                    <Col style={{ display: 'none' }}>
+                                                        {mediaType !== '' &&
+                                                            <Row className='videoHomepage'>
+                                                                {videoStream !== {} &&
+                                                                    <Video
+                                                                        url={videoStream.url}
+                                                                        type={videoStream.streamVideoType}
+                                                                        mediaType={mediaType}
+                                                                        setIde={setIde}
+                                                                        setShow={setShow}
+                                                                        setIsStreamLive={setIsStreamLive}
+                                                                        isItStreamTime={isItStreamTime}
+                                                                        page={'Home'}
+                                                                    />
+                                                                }
+                                                            </Row>
+                                                        }
+                                                    </Col>
+                                                    <Col className="countdownContainer">
+                                                        <Col className="countdownBg">
+                                                            <h4 className="streamStartsSoon">Striimi alkaa pian</h4>
+                                                        </Col>
+                                                    </Col>
+                                                </Row>
                                             )
                                             }
                                         </Col>

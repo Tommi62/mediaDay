@@ -15,10 +15,10 @@ const FlipCountdown = ({ time }) => {
             < Row className='countdownBg' >
                 <h2 className="countdownMainText">Streamin alkuun:</h2>
                 <Countdown
-                    dayTitle='Päivä'
-                    hourTitle='Tunti'
-                    minuteTitle='Minuutti'
-                    secondTitle='Sekunti'
+                    dayTitle='Päivää'
+                    hourTitle='Tuntia'
+                    minuteTitle='Minuuttia'
+                    secondTitle='Sekuntia'
                     theme='dark'
                     hideYear
                     hideMonth
@@ -31,10 +31,10 @@ const FlipCountdown = ({ time }) => {
             <Row className='countdownBg'>
                 <h2 className="countdownMainText">Streamin alkuun:</h2>
                 <Countdown
-                    dayTitle='Päivä'
-                    hourTitle='Tunti'
-                    minuteTitle='Minuutti'
-                    secondTitle='Sekunti'
+                    dayTitle='Päivää'
+                    hourTitle='Tuntia'
+                    minuteTitle='Minuuttia'
+                    secondTitle='Sekuntia'
                     theme='dark'
                     hideYear
                     hideMonth

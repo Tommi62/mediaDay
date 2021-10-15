@@ -5,8 +5,8 @@
       "type": "stream",
       "name": "Media Day 2022 -striimi (Live)",
       "description": "Tähän tulis sit sen striimin kuvaus.",
-      "startTime": "2022-04-01 10:00:00",
-      "endTime": "2022-04-01 15:00:00",
+      "startTime": "2021-11-15 10:00:00",
+      "endTime": "2022-11-15 15:00:00",
       "safetyMarginMinutes": 120,
       "url": "http://195.148.104.124:1935/jakelu/tommi/playlist.m3u8",
       "streamVideoType": "application/x-mpegurl",
@@ -17,8 +17,8 @@
       "type": "video",
       "name": "Media Day 2022 -promovideo",
       "description": "Media Day 2022 on pian täällä! Virittäydy tunnelmaan katsomalla tämä video.",
-      "url": "/media/videos/Vintage_Computer__Space_Invaders_SEQ.mp4",
-      "streamVideoType": "video/mp4",
+      "url": "https://cdn.videvo.net/videvo_files/video/free/2014-12/large_watermarked/Vintage_Computer__Space_Invaders_SEQ_preview.mp4",
+      "streamVideoType": "video/webm",
       "thumbnail": ""
     },
     {
@@ -26,7 +26,7 @@
       "type": "video",
       "name": "Media Day 2016 aamupäivän tunnelmia",
       "description": "Videomateriaalia edellisestä järjestetystä Media Day tapahtumasta.",
-      "url": "/media/videos/video.mp4",
+      "url": "https://cdn.videvo.net/videvo_files/video/free/2017-06/large_watermarked/170628_011_preview.mp4",
       "streamVideoType": "video/mp4",
       "thumbnail": ""
     },
@@ -35,7 +35,7 @@
       "type": "video",
       "name": "Media Day 2016 iltapäivän tunnelmia",
       "description": "Videomateriaalia edellisestä järjestetystä Media Day tapahtumasta.",
-      "url": "/media/videos/Metal_Wind_Chimes_at_Sunset.mp4",
+      "url": "https://cdn.videvo.net/videvo_files/video/free/2014-12/large_watermarked/Metal_Wind_Chimes_at_Sunset_preview.mp4",
       "streamVideoType": "video/mp4",
       "thumbnail": ""
     },
@@ -44,7 +44,7 @@
       "type": "video",
       "name": "Media Day 2016 yhteenveto",
       "description": "Media Day 2016 on onnistuneesti ohi! Kiitos kaikille osallistujille!",
-      "url": "/media/videos/Piano_Playing_Close.mp4",
+      "url": "https://cdn.videvo.net/videvo_files/video/free/2014-12/large_watermarked/Piano_Playing_Close_preview.mp4",
       "streamVideoType": "video/mp4",
       "thumbnail": ""
     }

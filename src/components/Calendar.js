@@ -22,12 +22,6 @@ const Calendar = () => {
       streamStartDate + ' ' + streamEndTime,
       'DD.MM.YYYY HH:mm'
     ).diff(now, 'minutes');
-    console.log(
-      'diff ' + streamStartDate + ' ' + streamStartTime + ' ' + compareStartTime
-    );
-    console.log(
-      'diff end ' + streamStartDate + ' ' + streamEndTime + ' ' + compareEndTime
-    );
 
     if (compareStartTime <= 0 && compareEndTime >= 0) {
       return true;
@@ -53,8 +47,8 @@ const Calendar = () => {
       views={{
         timeGrid: {
           visibleRange: {
-            start: '2022-04-01',
-            end: '2022-04-02',
+            start: '2021-11-15',
+            end: '2021-11-15',
           },
         },
       }}
